@@ -9,7 +9,7 @@
 //Implementation of an idea by Prof Braino to inform user that any changes made
 //to this build by the user have been successfully uploaded into firmware.
 #define STRING_VERSION_CONFIG_H __DATE__ " " __TIME__ // build date and time
-#define STRING_CONFIG_H_AUTHOR "(Adaptations pour MARepRap - Adrien Grelet - RepRap Diffusion)" //Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(Adaptations pour Tobeca - Adrien Grelet - RepRap Diffusion)" //Who made the changes.
 
 // SERIAL_PORT selects which serial port should be used for communication with the host.
 // This allows the connection of wireless adapters (for instance) to non-default port pins.
@@ -103,9 +103,9 @@
 // When temperature exceeds max temp, your heater will be switched off.
 // This feature exists to protect your hotend from overheating accidentally, but *NOT* from thermistor short/failure!
 // You should use MINTEMP for thermistor short/failure protection.
-#define HEATER_0_MAXTEMP 275
-#define HEATER_1_MAXTEMP 275
-#define HEATER_2_MAXTEMP 275
+#define HEATER_0_MAXTEMP 280
+#define HEATER_1_MAXTEMP 280
+#define HEATER_2_MAXTEMP 280
 #define BED_MAXTEMP 150
 
 // If your bed has low resistance e.g. .6 ohm and throws the fuse you can duty cycle it to reduce the
@@ -238,7 +238,7 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 #define DISABLE_E false // For all extruders
 
 #define INVERT_X_DIR false    // for Mendel set to false, for Orca set to true
-#define INVERT_Y_DIR false    // for Mendel set to true, for Orca set to false
+#define INVERT_Y_DIR true    // for Mendel set to true, for Orca set to false
 #define INVERT_Z_DIR false     // for Mendel set to false, for Orca set to true
 #define INVERT_E0_DIR false   // for direct drive extruder v9 set to true, for geared extruder set to false
 #define INVERT_E1_DIR false    // for direct drive extruder v9 set to true, for geared extruder set to false
@@ -255,9 +255,9 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 // Travel limits after homing
 #define X_MAX_POS 200
 #define X_MIN_POS 0
-#define Y_MAX_POS 190
+#define Y_MAX_POS 200
 #define Y_MIN_POS 0
-#define Z_MAX_POS 300
+#define Z_MAX_POS 200
 #define Z_MIN_POS 0
 
 #define X_MAX_LENGTH (X_MAX_POS - X_MIN_POS)
@@ -279,7 +279,9 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 
 // default settings 
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {64, 64, 2560,152}  // default steps per unit for ultimaker 
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {45.6, 45.6, 2560,152}  // default steps per unit for ultimaker 
+
+//{64, 64, 2560,152} is for proto2
 #define DEFAULT_MAX_FEEDRATE          {400, 400, 2, 60}    // (mm/sec)    45
 #define DEFAULT_MAX_ACCELERATION      {9000,9000,100,12000}    // 10000 X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
