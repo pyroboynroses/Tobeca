@@ -279,7 +279,7 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 
 // default settings 
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {45.6, 45.6, 2560,152}  // default steps per unit for ultimaker 
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {45.9, 45.9, 2560,152}  // default steps per unit for ultimaker 
 
 //{64, 64, 2560,152} is for proto2
 #define DEFAULT_MAX_FEEDRATE          {400, 400, 2, 60}    // (mm/sec)    45
