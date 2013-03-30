@@ -1,4 +1,5 @@
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-20/03/2013
-Première version des fichiers de configuration.
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Changelog sur les fichiers Slic3r pour la Tobeca
+Adrien Grelet - RepRap Diffusion
+
+20/03/2013 : Première version des fichiers de configuration.
+29/03/2013 : Ajout de paramètres avancés, modification et ajout de types de PLA.
