@@ -4,4 +4,5 @@ Adrien Grelet - RepRap Diffusion
 20/03/2013 : Première version des fichiers de configuration.
 29/03/2013 : Ajout de paramètres avancés, modification et ajout de types de PLA.
 03/04/2013 : Affinage de la configuration pour le NORMAL_0INFILL.
-08/04/2013 : Ajour du paramétrage avancé NORMAL_RESISTANT.
+08/04/2013 : Ajout du paramétrage avancé NORMAL_RESISTANT.
+10/04/2013 : Réduction de l'extrusion width de 0.5mm -> 0.45mm pour améliorer la liaison entre les passages, notamment avec du PLA Faberdashery.
