@@ -279,8 +279,8 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 
 // default settings 
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {46, 46, 2560,152}    // default steps per unit for Tobeca 
-                                                            //{64, 64, 2560,152} is for proto2
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {46, 46, 2560,152}    // Tobeca with T5 belt and BeltingOnline pulleys
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   {64, 64, 2560,152}    // Tobeca proto2
 
 #define DEFAULT_MAX_FEEDRATE          {400, 400, 2, 60}    // (mm/sec)    45
 #define DEFAULT_MAX_ACCELERATION      {9000,9000,100,12000}    // 10000 X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
