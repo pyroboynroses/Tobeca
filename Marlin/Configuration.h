@@ -279,13 +279,14 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 
 // default settings 
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {46, 46, 2560,152}    // Tobeca with T5 belt and BeltingOnline pulleys
-//#define DEFAULT_AXIS_STEPS_PER_UNIT   {64, 64, 2560,152}    // Tobeca proto2
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   {64, 64, 2560,152}    // only TO-002
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {46, 46, 2560,152}    // from TO-003 to TO-
+
 
 #define DEFAULT_MAX_FEEDRATE          {400, 400, 2, 60}    // (mm/sec)    45
-#define DEFAULT_MAX_ACCELERATION      {9000,9000,100,12000}    // 10000 X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
+#define DEFAULT_MAX_ACCELERATION      {5000,5000,100,12000}    // 10000 X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
-#define DEFAULT_ACCELERATION          2500    // X, Y, Z and E max acceleration in mm/s^2 for printing moves 
+#define DEFAULT_ACCELERATION          2000    // X, Y, Z and E max acceleration in mm/s^2 for printing moves 
 #define DEFAULT_RETRACT_ACCELERATION  4000   // X, Y, Z and E max acceleration in mm/s^2 for retracts
 
 // 

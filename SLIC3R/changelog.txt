@@ -8,3 +8,4 @@ Adrien Grelet - RepRap Diffusion
 10/04/2013 : Réduction de l'extrusion width de 0.5mm -> 0.45mm pour améliorer la liaison entre les passages, notamment avec du PLA Faberdashery.
 18/04/2013 : Réduction des vitesses de périmètre et modification des températures de fusion pour le PLA Faberdashery
 06/05/2013 : Augmentation des température de fusion du PLA Faberdashery
+10/05/2013 : réduction des vitesses de déplacement hors impression pour bien imprimer dans tous les cas, et éviter des décalages lors du rodage des machines.
