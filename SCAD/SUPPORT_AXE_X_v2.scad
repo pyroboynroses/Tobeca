@@ -56,7 +56,7 @@ module lameflex(){
 	translate([0,0,height2/2-l_lameflex/2]){cube([l_lameflex,largeur,l_lameflex]);}
 }
 
-module support_moteur(){
+module partie_gauche(){ //différenciation gauche de la pièce (support moteur X)
 	difference(){
 		cube([longueur,largeur,height2]);
 
@@ -72,8 +72,12 @@ module support_moteur(){
 	}
 }
 
+module partie_droite(){ //différenciation gauche de la pièce (retour X)
+}
+
 passage_tube();
 translate([0,entraxe_tubes,0]){passage_tube();}
 translate([2.5,r_ext,0]){passage_tige_filetee();}
 translate([r_ext,-r_ext,0]){lameflex();}
-translate([r_ext+l_lameflex,-r_ext,0]){support_moteur();}
+translate([r_ext+l_lameflex,-r_ext,0]){partie_gauche();}
+//translate([r_ext+l_lameflex,-r_ext,0]){partie_droite();}

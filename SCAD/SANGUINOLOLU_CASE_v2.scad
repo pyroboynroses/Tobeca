@@ -1,4 +1,4 @@
-longueur=125;
+longueur=115;
 largeur=86;
 hauteur=45;
 epaisseur_mur=3;
@@ -20,16 +20,16 @@ module sanguinololu(){
 		translate([epaisseur_mur,epaisseur_mur,epaisseur_fond]){cube([longueur-epaisseur_mur*2,largeur-epaisseur_mur*2,hauteur*2]);}
 
 		//trous de vissage
-		translate([(longueur-ecart_x_trou)/2+5,(largeur-ecart_y_trou)/2,-5]){cylinder(h = 10, r = r_trou_m3, $fn=50);}
-		translate([(longueur-ecart_x_trou)/2+5,(largeur-ecart_y_trou)/2+ecart_y_trou,-5]){cylinder(h = 10, r = r_trou_m3, $fn=50);}
-		translate([(longueur-ecart_x_trou)/2+5+ecart_x_trou,(largeur-ecart_y_trou)/2,-5]){cylinder(h = 10, r = r_trou_m3, $fn=50);}
-		translate([(longueur-ecart_x_trou)/2+5+ecart_x_trou,(largeur-ecart_y_trou)/2+ecart_y_trou,-5]){cylinder(h = 10, r = r_trou_m3, $fn=50);}
+		translate([(longueur-ecart_x_trou)/2,(largeur-ecart_y_trou)/2,-5]){cylinder(h = 10, r = r_trou_m3, $fn=50);}
+		translate([(longueur-ecart_x_trou)/2,(largeur-ecart_y_trou)/2+ecart_y_trou,-5]){cylinder(h = 10, r = r_trou_m3, $fn=50);}
+		translate([(longueur-ecart_x_trou)/2+ecart_x_trou,(largeur-ecart_y_trou)/2,-5]){cylinder(h = 10, r = r_trou_m3, $fn=50);}
+		translate([(longueur-ecart_x_trou)/2+ecart_x_trou,(largeur-ecart_y_trou)/2+ecart_y_trou,-5]){cylinder(h = 10, r = r_trou_m3, $fn=50);}
 		
 		//empreintes pour écrous de vissage
-		translate([(longueur-ecart_x_trou)/2+5,(largeur-ecart_y_trou)/2,epaisseur_fond-ep_ecrou_m3]){cylinder(h = 10, r = r_ecrou_m3, $fn=6);}
-		translate([(longueur-ecart_x_trou)/2+5,(largeur-ecart_y_trou)/2+ecart_y_trou,epaisseur_fond-ep_ecrou_m3]){cylinder(h = 10, r = r_ecrou_m3, $fn=6);}
-		translate([(longueur-ecart_x_trou)/2+5+ecart_x_trou,(largeur-ecart_y_trou)/2,epaisseur_fond-ep_ecrou_m3]){cylinder(h = 10, r = r_ecrou_m3, $fn=6);}
-		translate([(longueur-ecart_x_trou)/2+5+ecart_x_trou,(largeur-ecart_y_trou)/2+ecart_y_trou,epaisseur_fond-ep_ecrou_m3]){cylinder(h = 10, r = r_ecrou_m3, $fn=6);}
+		translate([(longueur-ecart_x_trou)/2,(largeur-ecart_y_trou)/2,epaisseur_fond-ep_ecrou_m3]){cylinder(h = 10, r = r_ecrou_m3, $fn=6);}
+		translate([(longueur-ecart_x_trou)/2,(largeur-ecart_y_trou)/2+ecart_y_trou,epaisseur_fond-ep_ecrou_m3]){cylinder(h = 10, r = r_ecrou_m3, $fn=6);}
+		translate([(longueur-ecart_x_trou)/2+ecart_x_trou,(largeur-ecart_y_trou)/2,epaisseur_fond-ep_ecrou_m3]){cylinder(h = 10, r = r_ecrou_m3, $fn=6);}
+		translate([(longueur-ecart_x_trou)/2+ecart_x_trou,(largeur-ecart_y_trou)/2+ecart_y_trou,epaisseur_fond-ep_ecrou_m3]){cylinder(h = 10, r = r_ecrou_m3, $fn=6);}
 
 		//trous pour ventilateur droite
 		translate([-5,epaisseur_mur+(dim_fan-entraxe_fan)/2,epaisseur_fond+(dim_fan-entraxe_fan)/2]){rotate([0,90,0])cylinder(h = 10, r = r_trou_m3, $fn=50);}
@@ -69,7 +69,7 @@ module sanguinololu(){
 		translate([40,-5,epaisseur_fond]){cube([5,20,hauteur]);}
 
 		//vide fond du boitier
-		translate([(longueur-ecart_x_trou)/2+5+5,(largeur-ecart_y_trou)/2-10,-5]){cube([ecart_x_trou-10,ecart_y_trou+20,10]);}
+		translate([(longueur-ecart_x_trou)/2+5,(largeur-ecart_y_trou)/2-10,-5]){cube([ecart_x_trou-10,ecart_y_trou+20,10]);}
 
 
 	}
