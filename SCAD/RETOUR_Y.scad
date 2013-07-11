@@ -1,15 +1,33 @@
 $fn=100;
 
-M3_trou = 2;
-M3_Ecrou_Diam = 3.3;
+M3_trou = 4;
+M3_Ecrou_Diam = 6.6;
 M3_Ecrou_Epaisseur = 3;
+module LIB_M3(Longueur) 
+{
+  translate([0,0,-0.01]) cylinder(h=Longueur + 0.02, r=M3_trou/2, $fn=20);
+  translate([0,0,-0.01]) cylinder(h=M3_Ecrou_Epaisseur+0.01, r=M3_Ecrou_Diam/2, $fn=6);
+}
+
+//Vis à Bois
+B3_Trou_Vis = 2.5;
+B3_Trou_Passage = 4;
+B3_Chanfrein = 2; 
+module LIB_B3_TETE(Longueur) 
+{
+  //Trou de passage
+  translate([0,0,-0.01]) cylinder(h=Longueur + 0.02, r=B3_Trou_Passage/2, $fn=20);
+  //Tête chanfreinée
+  translate([0,0,-0.01]) cylinder(h=B3_Chanfrein + 0.01, r1=B3_Trou_Passage/2+B3_Chanfrein, r2=B3_Trou_Passage/2, $fn=30);
+}
 
 module LIB_Renfort(Longueur, Hauteur, Epaisseur)
 {
   polyhedron
     (points    = [ [0, 0, 0], [0, 0, Hauteur], [0, Epaisseur, Hauteur], [0, Epaisseur, 0], [Longueur, Epaisseur, 0], [Longueur, 0, 0]  ], 
      triangles = [ [0,2,1],  [0,3,2],  [0,1,5],  [0,5,4], [1,2,5], [0,4,3], [2,3,4], [2,4,5] ]
-     );}
+     );
+}
 
 module TOBECA_RETOUR_Y_BASE()
 {
@@ -17,13 +35,11 @@ module TOBECA_RETOUR_Y_BASE()
   difference() 
   {
     cube([8,55,16]);
-    translate([-0.01,10,10]) rotate([0,90,0]) cylinder(h=8.02, r=M3_trou, $fn=20);
-    translate([5,10,10]) rotate([0,90,0]) cylinder(h=M3_Ecrou_Epaisseur+0.02, r=M3_Ecrou_Diam, $fn=6);
+    translate([8,10,10]) rotate([0,-90,0]) LIB_M3(8);
+    translate([8,45,10]) rotate([0,-90,0]) LIB_M3(8);
 
-    translate([-0.01,45,10]) rotate([0,90,0]) cylinder(h=8.02, r=M3_trou, $fn=20);
-    translate([5,45,10]) rotate([0,90,0]) cylinder(h=M3_Ecrou_Epaisseur+0.02, r=M3_Ecrou_Diam, $fn=6);
     translate([-0.01,16.5,12]) cube([8.02,22,4.01]);
-    translate([4,27.5,2]) cylinder(h=20, r=1, $fn=30);
+    translate([4,27.5,2]) cylinder(h=20, r=1.5, $fn=30);
   }
 
   //Renforts
@@ -37,7 +53,7 @@ module TOBECA_RETOUR_Y_BASE()
   difference()
   {
     translate([26,27.5,0]) cylinder(h=12, r=3.9, $fn=30);
-    translate([26,27.5,6.5]) cylinder(h=12, r=1, $fn=30);
+    translate([26,27.5,6.5]) cylinder(h=12, r=1.5, $fn=30);
   }
   translate([26,27.5,4]) cylinder(h=2, r1=16, r2=6);
   translate([23,0,0]) polyhedron
@@ -59,22 +75,21 @@ module TOBECA_RETOUR_Y_TOP()
 	{
 	  union()
 	    {
-	      translate([26,80]) cylinder(h=2.01, r=16);
-	      translate([26,80,2]) cylinder(h=2.01, r1=16, r2=6);
-	      translate([26,80,4]) cylinder(h=0.5, r=6);
-	      translate([0,70,0]) cube([20,20,2]);
-	      translate([0,70,2]) cube([20,20,2]);
+	      translate([26,16]) cylinder(h=2.01, r=16);
+	      translate([26,16,2]) cylinder(h=2.01, r1=16, r2=6);
+	      translate([26,16,4]) cylinder(h=0.5, r=6);
+	      translate([0,6,0]) cube([20,20,4]);
 	    }
-	  translate([26,80,-0.01]) cylinder(h=6.502, r=1, $fn=30);
-	  translate([26,80,-0.01]) cylinder(h=2.01, r1=3, r2=1, $fn=30);
+	  translate([26,16,0]) LIB_B3_TETE(6.5);
 	
-	  translate([4,80,-0.01]) cylinder(h=6.502, r=1, $fn=30);
-	  translate([4,80,-0.01]) cylinder(h=2.01, r1=3, r2=1, $fn=30);
+	  translate([4,16,0]) LIB_B3_TETE(6.5);
 	
-	  translate([26,80,4]) cylinder(h=0.501, r=4.1, $fn=30);
+	  translate([26,16,4]) cylinder(h=0.501, r=4.1, $fn=30);
 	}
 }
 
-
+color("green")
 TOBECA_RETOUR_Y_BASE();
+
+color("red") translate([0,57,0]) //rotate([180,0,0])
 TOBECA_RETOUR_Y_TOP();
