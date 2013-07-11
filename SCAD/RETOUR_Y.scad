@@ -35,8 +35,8 @@ module TOBECA_RETOUR_Y_BASE()
   difference() 
   {
     cube([8,55,16]);
-    translate([8,10,10]) rotate([0,-90,0]) LIB_M3(8);
-    translate([8,45,10]) rotate([0,-90,0]) LIB_M3(8);
+    translate([8,10,9]) rotate([0,-90,0]) LIB_M3(8);
+    translate([8,45,9]) rotate([0,-90,0]) LIB_M3(8);
 
     translate([-0.01,16.5,12]) cube([8.02,22,4.01]);
     translate([4,27.5,2]) cylinder(h=20, r=1.5, $fn=30);
@@ -68,24 +68,28 @@ module TOBECA_RETOUR_Y_BASE()
 
 module TOBECA_RETOUR_Y_TOP() 
 {
-	
-	//Chapeau
-	
-	difference()
-	{
-	  union()
-	    {
-	      translate([26,16]) cylinder(h=2.01, r=16);
-	      translate([26,16,2]) cylinder(h=2.01, r1=16, r2=6);
-	      translate([26,16,4]) cylinder(h=0.5, r=6);
-	      translate([0,6,0]) cube([20,20,4]);
-	    }
-	  translate([26,16,0]) LIB_B3_TETE(6.5);
-	
-	  translate([4,16,0]) LIB_B3_TETE(6.5);
-	
-	  translate([26,16,4]) cylinder(h=0.501, r=4.1, $fn=30);
-	}
+ //Chapeau
+ difference()
+ {
+   union()
+     {
+       translate([26,16]) cylinder(h=2.01, r=16);
+       translate([26,16,2]) cylinder(h=2.01, r1=16, r2=6);
+       translate([26,16,4]) cylinder(h=0.5, r=6);
+       translate([0,6,0]) cube([20,20,2]);
+       translate([0,6,2]) cube([10,20,2]);
+    translate([10,6,2]) polyhedron
+      (points    = [ [0, 0, 0], [0, 0, 2], [4, 0, 0], [0, 20, 0], [0, 20, 2], [4, 20, 0], ], 
+       triangles = [ [0,1,2],  [0,3,1],  [3,4,1], [1,4,5], [1,5,2], [0,2,3], [3,2,5], [3,5,4]
+ ]
+       );
+     }
+   translate([26,16,0]) LIB_B3_TETE(6.5);
+ 
+   translate([4,16,0]) LIB_B3_TETE(6.5);
+ 
+   translate([26,16,4]) cylinder(h=0.501, r=4.3, $fn=30);
+ }
 }
 
 color("green")
