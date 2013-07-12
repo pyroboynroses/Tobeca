@@ -7,6 +7,7 @@ r_goutte=6;
 r_pointe=5.5;
 height=10;
 dec=2.5;
+l_cassure=5;
 
 module goutte(){
 	union(){
@@ -48,6 +49,11 @@ module coin(){
 		translate([(cube_int+ep)/2,(cube_int+ep)/2,-5]){rotate([0,0,225])goutte();}
 		translate([-5,(cube_int+ep)/2,(cube_int+ep)/2]){rotate([90,135,90])goutte();}
 		translate([(cube_int+ep)/2,-5,(cube_int+ep)/2]){rotate([270,135,0])goutte();}
+
+		//cassure du coin
+		polyhedron(
+  points=[[0,0,0],[l_cassure,0,0],[0,l_cassure,0],[0,0,l_cassure]], 
+  triangles=[[2,0,1],[0,3,1],[0,2,3],[1,3,2]]);
 		
 	}
 }

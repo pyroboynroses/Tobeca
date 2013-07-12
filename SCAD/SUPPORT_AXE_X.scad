@@ -1,6 +1,6 @@
 largeur=75;
 longueur=28;
-r_tube=6;
+r_tube=6.5;
 r_ext=10;
 r_tube_l=7;
 contact_tube=3;
@@ -17,6 +17,7 @@ ep_trou_m8=2;
 entraxe_tubes=55;
 l_pass_tige_filetee=35;
 l_lameflex=1;
+ep_lameflex=0.75;
 
 module passage_tube(){
 	difference(){
@@ -53,7 +54,7 @@ module passage_tige_filetee(){
 }
 
 module lameflex(){
-	translate([0,0,height2/2-l_lameflex/2]){cube([l_lameflex,largeur,l_lameflex]);}
+	translate([0,0,height2/2-ep_lameflex/2]){cube([l_lameflex,largeur,ep_lameflex]);}
 }
 
 module fixation_x(){
