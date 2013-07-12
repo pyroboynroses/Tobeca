@@ -279,10 +279,11 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 
 // default settings 
 
-//#define DEFAULT_AXIS_STEPS_PER_UNIT   {64, 64, 2560,152}    // only TO-002
-//#define DEFAULT_AXIS_STEPS_PER_UNIT   {46, 46, 2560,152}    // from TO-003 to TO-006
-//#define DEFAULT_AXIS_STEPS_PER_UNIT   {46, 64, 2560,152}    // from TO-007 to TO-0
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {64, 64, 2560,152}    // from TO-0 to TO-0 and TP-001 to TP-0
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   {64, 64, 2560,152}    // only TO-002 (T5)
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   {46, 46, 2560,152}    // from TO-003 to TO-006 (T5)
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   {46, 64, 2560,152}    // from TO-007 to TO-015 (T5)
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {64, 64, 2560,152}    // from TO-016 to TO-0 (T5)
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   {66.67, 66.67, 2560,152}    // from T0-0 to TO-0 and TP-001 (HTD3M)
 
 
 #define DEFAULT_MAX_FEEDRATE          {400, 400, 2, 60}    // (mm/sec)    45

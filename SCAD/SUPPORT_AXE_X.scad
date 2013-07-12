@@ -1,6 +1,6 @@
 largeur=75;
 longueur=28;
-r_tube=6.5;
+r_tube=7;
 r_ext=10;
 r_tube_l=7;
 contact_tube=3;
@@ -18,6 +18,8 @@ entraxe_tubes=55;
 l_pass_tige_filetee=35;
 l_lameflex=1;
 ep_lameflex=0.75;
+
+include <SUPPORT_ENDSTOP_X.scad>;
 
 module passage_tube(){
 	difference(){
@@ -101,3 +103,4 @@ translate([0,entraxe_tubes,0]){passage_tube();}
 translate([2.5,r_ext,0]){passage_tige_filetee();}
 translate([r_ext,-r_ext,0]){lameflex();}
 translate([r_ext+l_lameflex,-r_ext,0]){fixation_x();}
+//translate([r_ext+l_lameflex+longueur,largeur-31.5,0]){endstop_x();}
