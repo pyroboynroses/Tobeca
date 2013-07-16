@@ -34,17 +34,17 @@ module TOBECA_RETOUR_Y_BASE()
   //Partie Fixation bois
   difference() 
   {
-    cube([8,55,16]);
-    translate([8,10,9]) rotate([0,-90,0]) LIB_M3(8);
-    translate([8,45,9]) rotate([0,-90,0]) LIB_M3(8);
+    cube([8,55,18]);
+    translate([8,10,8]) rotate([0,-90,0]) LIB_M3(8);
+    translate([8,45,8]) rotate([0,-90,0]) LIB_M3(8);
 
-    translate([-0.01,16.5,12]) cube([8.02,22,4.01]);
+    translate([-0.01,16.5,14]) cube([8.02,22,4.01]);
     translate([4,27.5,2]) cylinder(h=20, r=1.5, $fn=30);
   }
 
   //Renforts
-  translate([8,0,4]) LIB_Renfort(15,12,4);
-  translate([8,51,4]) LIB_Renfort(15,12,4);
+  translate([8,0,4]) LIB_Renfort(15,14,4);
+  translate([8,51,4]) LIB_Renfort(15,14,4);
 
   //Base
   cube([23,55,4]);
@@ -52,7 +52,7 @@ module TOBECA_RETOUR_Y_BASE()
   translate([26,27.5]) cylinder(h=4, r=16);
   difference()
   {
-    translate([26,27.5,0]) cylinder(h=12, r=3.9, $fn=30);
+    translate([26,27.5,0]) cylinder(h=14.5, r=3.9, $fn=30);
     translate([26,27.5,6.5]) cylinder(h=12, r=1.5, $fn=30);
   }
   translate([26,27.5,4]) cylinder(h=2, r1=16, r2=6);

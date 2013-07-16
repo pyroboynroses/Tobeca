@@ -19,7 +19,7 @@ l_pass_tige_filetee=35;
 l_lameflex=1;
 ep_lameflex=0.75;
 
-include <SUPPORT_ENDSTOP_X.scad>;
+//include <SUPPORT_ENDSTOP_X.scad>;
 
 module passage_tube(){
 	difference(){
