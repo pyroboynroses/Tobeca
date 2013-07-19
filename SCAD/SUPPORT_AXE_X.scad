@@ -17,7 +17,7 @@ ep_trou_m8=2;
 entraxe_tubes=55;
 l_pass_tige_filetee=35;
 l_lameflex=1;
-ep_lameflex=0.75;
+ep_lameflex=1;
 
 //include <SUPPORT_ENDSTOP_X.scad>;
 
