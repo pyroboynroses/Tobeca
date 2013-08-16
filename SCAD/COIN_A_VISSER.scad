@@ -40,19 +40,19 @@ module coin(){
 
 		//trous du bas
 		translate([d_trou+ep,ep+ep_bois/2,-5]){cylinder(h = ep*3, r = r_trou, $fn=50);}
-		translate([d_trou+ep,ep+ep_bois/2,0]){cylinder(h = ep-1, r1 = r_tete, r2=t_trou, $fn=50);}
+		translate([d_trou+ep,ep+ep_bois/2,0]){cylinder(h = ep-1, r1 = r_tete, r2=r_trou, $fn=50);}
 
 		translate([ep+ep_bois/2,d_trou+ep,-5]){cylinder(h = ep*3, r = r_trou, $fn=50);}
-		translate([ep+ep_bois/2,d_trou+ep,0]){cylinder(h = ep-1, r1 = r_tete, r2=t_trou, $fn=50);}
+		translate([ep+ep_bois/2,d_trou+ep,0]){cylinder(h = ep-1, r1 = r_tete, r2=r_trou, $fn=50);}
 
 
 		//trous du haut
 		translate([-5,ep+ep_bois/2,d_trou+ep]){rotate([0,90,0])cylinder(h = ep*3, r = r_trou, $fn=50);}
-		translate([0,ep+ep_bois/2,d_trou+ep]){rotate([0,90,0])cylinder(h = ep-1, r1 = r_tete, r2=t_trou, $fn=50);}
+		translate([0,ep+ep_bois/2,d_trou+ep]){rotate([0,90,0])cylinder(h = ep-1, r1 = r_tete, r2=r_trou, $fn=50);}
 
 
 		translate([ep+ep_bois/2,-5,d_trou+ep]){rotate([0,90,90])cylinder(h = ep*3, r = r_trou, $fn=50);}
-		translate([ep+ep_bois/2,0,d_trou+ep]){rotate([0,90,90])cylinder(h = ep-1, r1 = r_tete, r2=t_trou, $fn=50);}
+		translate([ep+ep_bois/2,0,d_trou+ep]){rotate([0,90,90])cylinder(h = ep-1, r1 = r_tete, r2=r_trou, $fn=50);}
 
 		//gouttes
 		translate([(cube_int+ep)/2,(cube_int+ep)/2,-5]){rotate([0,0,225])goutte();}

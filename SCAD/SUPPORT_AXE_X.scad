@@ -1,6 +1,6 @@
 largeur=75;
 longueur=28;
-r_tube=7.25;
+r_tube=7.35;
 r_ext=10;
 r_tube_l=7;
 contact_tube=3;
@@ -18,8 +18,7 @@ entraxe_tubes=55;
 l_pass_tige_filetee=35;
 l_lameflex=1;
 ep_lameflex=1;
-
-//include <SUPPORT_ENDSTOP_X.scad>;
+l_fix=7;
 
 module passage_tube(HEIGHT){
 	difference(){
@@ -72,30 +71,33 @@ module fixation_x(){
 		translate([5.5,largeur/2+15.5,-5]){cylinder(r=r_m3, h=height2+20, $fn=50);}
 
 		//trou pour vis réglage Z
-		translate([5.5,4,-5]){cylinder(r=r_m3, h=height2+20, $fn=50);}
-		translate([5.5,4,height2-5]){cylinder(r=r_ecrou_m3, h=height2, $fn=6);}
+		translate([6.5,4,-5]){cylinder(r=r_m3, h=height2+20, $fn=50);}
+		translate([6.5,4,height2-5]){cylinder(r=r_ecrou_m3, h=height2, $fn=6);}
 
 		//trous arbres
-		translate([longueur-prof_arbre,12,11]){rotate([0,90,0])cylinder(r=r_arbre, h=prof_arbre+20, $fn=50);}
-		translate([longueur-prof_arbre,largeur-12,11]){rotate([0,90,0])cylinder(r=r_arbre, h=prof_arbre+20, $fn=50);}
-		translate([longueur-prof_arbre,11.5,-5]){cube([prof_arbre+20,1,15]);}
-		translate([longueur-prof_arbre,largeur-12.5,-5]){cube([prof_arbre+20,1,15]);}
+		translate([longueur-prof_arbre,10,11]){rotate([0,90,0])cylinder(r=r_arbre, h=prof_arbre+20, $fn=50);}
+		translate([longueur-prof_arbre,largeur-10,11]){rotate([0,90,0])cylinder(r=r_arbre, h=prof_arbre+20, $fn=50);}
+		translate([longueur-prof_arbre,9.5,-5]){cube([prof_arbre+20,1,15]);}
+		translate([longueur-prof_arbre,largeur-10.5,-5]){cube([prof_arbre+20,1,15]);}
 
 		//trous de serrage des arbres
 		translate([longueur-5,-5,4]){rotate([270,0,0])cylinder(r=r_m3, h=200, $fn=50);}
 		translate([longueur-5,largeur/2-20,4]){rotate([270,0,0])cylinder(r=r_ecrou_m3, h=40, $fn=6);}
 
-		//creu pour fixation SUPPORT_ENDSTOP_X
-		translate([longueur-10,largeur-5,-5]){cube([20,10,height2+20]);}
-
-		//creu pour fixation gaine et fils
-		translate([3,largeur-5,4]){cube([10,15,height2]);}
-		translate([10,largeur-3,height2-5]){rotate([0,90,0])cylinder(r=r_m3, h=10, $fn=50);}
-
 		//épurations diverses
-		translate([10,0,10]){rotate([45,0,0])cube([50,15,20]);}
+		translate([10,-2,10]){rotate([45,0,0])cube([50,15,20]);}
 	}
 		
+}
+
+module fixation_gaine(){
+	difference(){
+		cube([3,l_fix,height2]);
+	
+		translate([-5,l_fix/2,height2-height2/4]){rotate([0,90,0])cylinder(r=r_m3, h=20, $fn=50);}
+		translate([-5,l_fix/2,height2/4]){rotate([0,90,0])cylinder(r=r_m3, h=20, $fn=50);}
+
+	}
 }
 
 passage_tube(height1);
@@ -103,4 +105,5 @@ translate([0,entraxe_tubes,0]){passage_tube(height2);}
 translate([2.5,r_ext,0]){passage_tige_filetee();}
 translate([r_ext,-r_ext,0]){lameflex();}
 translate([r_ext+l_lameflex,-r_ext,0]){fixation_x();}
-//translate([r_ext+l_lameflex+longueur,largeur-31.5,0]){endstop_x();}
+translate([25,largeur-r_ext,0]){fixation_gaine();}
+translate([11,largeur-r_ext,0]){fixation_gaine();}

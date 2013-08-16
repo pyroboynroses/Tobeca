@@ -17,8 +17,8 @@ module endstop_x(){
 		}
 		
 		//trou pour passage arbre
-		translate([-5,larg-12,11]){rotate([0,90,0])cylinder(r=r_arbre, h=30, $fn=50);}
-		translate([-5,larg-12-0.5,-5]){cube([30,1,16]);}
+		translate([-5,larg-10,11]){rotate([0,90,0])cylinder(r=r_arbre, h=30, $fn=50);}
+		translate([-5,larg-10-0.5,-5]){cube([30,1,16]);}
 
 		//trou pour serrage arbre avec vis
 		translate([long/2,-5,4]){rotate([-90,0,0])cylinder(r=r_m3, h=30, $fn=50);}

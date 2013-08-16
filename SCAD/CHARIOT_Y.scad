@@ -47,5 +47,5 @@ module lamelle_assemblage(){
 }
 
 support_douille_fixe();
-translate([l_fixe,0,0]){lamelle_assemblage();}
-translate([l_fixe/2+entraxe-l_fixe/2,0,0]){support_douille_fixe();;}
+//translate([l_fixe,0,0]){lamelle_assemblage();}
+//translate([l_fixe/2+entraxe-l_fixe/2,0,0]){support_douille_fixe();;}
