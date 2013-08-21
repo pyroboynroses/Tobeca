@@ -7,7 +7,7 @@ contact_tube=3;
 r_m3=2;
 r_ecrou_m3=3.3;
 r_arbre=4;
-prof_arbre=25;
+prof_arbre=14;
 r_ecrou_m8=7.7;
 r_m8=4.5;
 h_ecrou_m8=8;
@@ -43,7 +43,7 @@ module passage_tige_filetee(){
 		translate([7.5,0,-5]){cube([10,l_pass_tige_filetee,height1+10]);}
 
 		//passage pour écrou M8
-		translate([0,l_pass_tige_filetee/2,-5]){cylinder(r=r_ecrou_m8, h=h_ecrou_m8+5, $fn=6);}
+		translate([0,l_pass_tige_filetee/2,-5]){cylinder(r=r_ecrou_m8, h=h_ecrou_m8+4, $fn=6);}
 		translate([0,l_pass_tige_filetee/2,-5]){cylinder(r=r_m8, h=50, $fn=50);}
 		translate([0,l_pass_tige_filetee/2,h_ecrou_m8+ep_trou_m8]){cylinder(r=r_ecrou_m8+0.3, h=50, $fn=6);}
 
@@ -82,7 +82,7 @@ module fixation_x(){
 
 		//trous de serrage des arbres
 		translate([longueur-5,-5,4]){rotate([270,0,0])cylinder(r=r_m3, h=200, $fn=50);}
-		translate([longueur-5,largeur/2-20,4]){rotate([270,0,0])cylinder(r=r_ecrou_m3, h=40, $fn=6);}
+		translate([longueur-5,largeur/2-21,4]){rotate([270,0,0])cylinder(r=r_ecrou_m3, h=42, $fn=6);}
 
 		//épurations diverses
 		translate([10,-2,10]){rotate([45,0,0])cube([50,15,20]);}
