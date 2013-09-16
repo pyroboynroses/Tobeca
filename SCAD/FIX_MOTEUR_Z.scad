@@ -25,10 +25,10 @@ module fix_moteur_z(){
 		translate([largeur/2+l_moteur/2,longueur/2+l_moteur/2,-5]){cylinder(h=20, r=trou_m3, $fn=50);}
 
 		//trous pour serrage
-		translate([pos_tube-3,3,-5]){cube([6,3,20]);}
+		translate([pos_tube-2.5,3,-5]){cube([5,3,20]);}
 		translate([pos_tube,-5,h2/2]){rotate([-90,0,0])cylinder(h=15, r=trou_m3, $fn=50);}
 
-		translate([pos_tube-3,longueur-6,-5]){cube([6,3,20]);}
+		translate([pos_tube-2.5,longueur-6,-5]){cube([5,3,20]);}
 		translate([pos_tube,longueur+5,h2/2]){rotate([90,0,0])cylinder(h=15, r=trou_m3, $fn=50);}
 
 		//cassage des coins
