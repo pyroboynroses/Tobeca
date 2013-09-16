@@ -1,4 +1,4 @@
-height=19;
+height=17;
 long=14;
 larg=21.5;
 r_arbre=4;

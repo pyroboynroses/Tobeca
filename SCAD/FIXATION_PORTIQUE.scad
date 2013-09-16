@@ -16,17 +16,17 @@ module fixation_portique(){
 		translate([pos_tube,longueur/2,-5]){cylinder(h=20, r=r_tube, $fn=50);}
 
 		//trou pour serrage sur tube
-		translate([pos_tube-3,3,-5]){cube([6,3,20]);}
+		translate([pos_tube-2.5,3,-5]){cube([5,3,20]);}
 		translate([pos_tube,-5,h/2]){rotate([-90,0,0])cylinder(h=15, r=trou_m3, $fn=50);}
 
 		//trou pour serrage dans boite
 		//translate([-5,longueur/2,h/2]){rotate([0,90,0])cylinder(h=15, r=trou_m3, $fn=50);}
 		//translate([pos_tube,longueur/2,h/2]){rotate([0,-90,0])cylinder(h=12, r=ecrou_m3, $fn=6);}
-		translate([3,longueur/2-3,-5]){cube([3,6,20]);}
+		translate([3,longueur/2-2.5,-5]){cube([3,5,20]);}
 		translate([-5,longueur/2,h/2]){rotate([0,90,0])cylinder(h=15, r=trou_m3, $fn=50);}
 
 		//cassage des coins
-		//translate([20,0,-5]){rotate([0,0,-35])cube([30,30,20]);}
+		translate([20,0,-5]){rotate([0,0,-35])cube([30,30,20]);}
 		translate([20,longueur,-5]){rotate([0,0,-55])cube([30,30,20]);}
 
 
@@ -48,4 +48,4 @@ module support_endstop(){
 }
 
 fixation_portique();
-translate([pos_tube+r_tube+5,0,0]){support_endstop();}
+//translate([pos_tube+r_tube+5,0,0]){support_endstop();}
