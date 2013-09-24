@@ -55,7 +55,7 @@ module TOBECA_RETOUR_Y_BASE()
     translate([26,27.5,0]) cylinder(h=14.5, r=3.9, $fn=30);
     translate([26,27.5,6.5]) cylinder(h=12, r=1.5, $fn=30);
   }
-  translate([26,27.5,4]) cylinder(h=2, r1=16, r2=6);
+  translate([26,27.5,4]) cylinder(h=2, r1=16, r2=11);
   translate([23,0,0]) polyhedron
     (points    = [ [0, 0, 0], [0, 0, 4], [0, 17, 4], [0, 17, 0], [15, 17, 0], [15, 17, 4] ], 
      triangles = [ [0,2,1],  [0,3,2],  [0,1,5],  [0,5,4], [1,2,5], [0,4,3], [2,3,4], [2,4,5] ]
@@ -74,7 +74,7 @@ module TOBECA_RETOUR_Y_TOP()
    union()
      {
        translate([26,16]) cylinder(h=2.01, r=16);
-       translate([26,16,2]) cylinder(h=2.01, r1=16, r2=6);
+       translate([26,16,2]) cylinder(h=2.01, r1=16, r2=11);
        translate([26,16,4]) cylinder(h=0.5, r=6);
        translate([0,6,0]) cube([20,20,2]);
        translate([0,6,2]) cube([10,20,2]);
