@@ -26,7 +26,7 @@ module fixation_portique(){
 		translate([-5,longueur/2,h/2]){rotate([0,90,0])cylinder(h=15, r=trou_m3, $fn=50);}
 
 		//cassage des coins
-		translate([20,0,-5]){rotate([0,0,-35])cube([30,30,20]);}
+		//translate([20,0,-5]){rotate([0,0,-35])cube([30,30,20]);}
 		translate([20,longueur,-5]){rotate([0,0,-55])cube([30,30,20]);}
 		translate([4,0,-5]){rotate([0,0,-225])cube([10,10,20]);}
 		translate([4,longueur,-5]){rotate([0,0,-225])cube([10,10,20]);}
@@ -50,4 +50,4 @@ module support_endstop(){
 }
 
 fixation_portique();
-//translate([pos_tube+r_tube+5,0,0]){support_endstop();}
+translate([pos_tube+r_tube+5,0,0]){support_endstop();}

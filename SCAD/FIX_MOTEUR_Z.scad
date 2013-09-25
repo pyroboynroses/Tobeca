@@ -35,6 +35,9 @@ module fix_moteur_z(){
 		translate([20,0,-5]){rotate([0,0,-35])cube([30,30,20]);}
 		translate([20,longueur,-5]){rotate([0,0,-55])cube([30,30,20]);}
 
+		translate([4,0,-5]){rotate([0,0,-225])cube([10,10,20]);}
+		translate([4,longueur,-5]){rotate([0,0,-225])cube([10,10,20]);}
+
 		
 	}
 }
