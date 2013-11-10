@@ -1,7 +1,7 @@
 d_trou=25;
 ep=4;
 r_trou=1.5;
-r_tete=3;
+r_tete=3.5;
 cube_int=35;
 ep_bois=9;
 r_goutte=6;
