@@ -7,7 +7,7 @@ contact_tube=3;
 r_m3=2;
 r_ecrou_m3=3.3;
 r_arbre=4;
-prof_arbre=15;
+prof_arbre=17;
 r_ecrou_m8=7.7;
 r_m8=4.5;
 h_ecrou_m8=8;
@@ -17,7 +17,7 @@ ep_trou_m8=2;
 entraxe_tubes=55;
 l_pass_tige_filetee=35;
 l_lameflex=1;
-ep_lameflex=0.9;
+ep_lameflex=1.5;
 l_fix=7;
 
 module passage_tube(HEIGHT){

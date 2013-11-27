@@ -29,7 +29,7 @@ module rangement_portique(){
 		//trou pour blocage portique avec molette
 		translate([-5,21,hauteur/2]){rotate([0,90,0])cylinder(h=50, r=trou_m3, $fn=50);}
 		translate([l1+1,21,hauteur/2]){rotate([0,90,0])cylinder(h=50, r=ecrou_m3, $fn=50);}
-		translate([-5,21,hauteur/2]){rotate([0,90,0])cylinder(h=5+l1-2, r=ecrou_m3, $fn=6);}
+		translate([-5,21,hauteur/2]){rotate([0,90,0])cylinder(h=5+2.5, r=ecrou_m3-0.1, $fn=6);}
 
 	//cassage coin supérieur (pour rangement dans mallette)
 	translate([3,0,-5]){rotate([0,0,-250])cube([10,10,hauteur+10]);}

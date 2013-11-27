@@ -7,6 +7,18 @@ ep=10;
 dec_trou_serrage=2;
 r_trou_filament=2.5;
 
+module arrondi(RAYON,EP){
+	difference(){
+		cube([RAYON*2,RAYON*2,EP]);
+
+		translate([RAYON,RAYON,-5])cylinder(r=RAYON, h=EP+10, $fn=100);
+
+		translate([RAYON,-5,-5])cube([RAYON*2+10,RAYON*2+10,EP+10]);
+		translate([-5,RAYON,-5])cube([RAYON*2+10,RAYON*2+10,EP+10]);
+
+	}
+}
+
 module support_608zz(){
 	difference(){
 		union(){
@@ -30,8 +42,7 @@ module support_608zz(){
 		translate([26+12,8-5,ep/2]){rotate([-90,0,0])cylinder(r=r_m3, h=largeur+10, $fn=50);}
 
 		//trou pour vis de serrage
-		translate([5,largeur/2+dec_trou_serrage,-5]){cylinder(r=r_m3, h=ep+15, $fn=50);}
-		translate([5,largeur/2+dec_trou_serrage,-5]){rotate([0,0,30])cylinder(r=ecrou_m3, h=5+7, $fn=6);}
+		translate([5,largeur/2+dec_trou_serrage,-5]){cylinder(r=r_m3+0.5, h=ep+15, $fn=50);}
 	}
 }
 
@@ -45,6 +56,9 @@ module flanc_charniere(){
 		cube([19,11,7]);
 		
 		translate([11,6,-5]){cylinder(r=r_m3, h=15, $fn=50);}
+		translate([11,6,5]){cylinder(r1=r_m3, r2=r_m3+1, h=2, $fn=50);}
+
+		translate([-2,4,-5]){rotate([0,0,30])cube([19,11,15]);}
 	}
 
 }
@@ -62,7 +76,15 @@ module extrudeur(){
 			//débord pour fixation moteur
 			translate([55,20,0]){cube([8,12.8,largeur]);}
 			translate([55+8,20+12.8/2,0]){cylinder(r=12.8/2, h=largeur, $fn=50);}
+			
+			//arrondis sur la pièce	
+			translate([55,10,0]){arrondi(3,largeur);}
+			translate([55,20,0]){rotate([0,0,270])arrondi(6,largeur);}
+			translate([55,32.8,0]){arrondi(8,largeur);}
 		}
+		//arrondi en haut de la pièce
+		translate([55.5,54.5,-5]){rotate([0,0,180])arrondi(9,largeur+10);}
+
 		//extrusions dans partie à fixer sur plaque
 		translate([15,-5,-5]){cube([10,5+3,largeur+10]);}
 		translate([45,-5,-5]){cube([10,5+3,largeur+10]);}
@@ -82,10 +104,10 @@ module extrudeur(){
 		translate([40,27,-5]){cylinder(r=12, h=largeur+10, $fn=50);}
 		translate([20,27-12,-5]){cube([20,12*2,largeur+10]);}
 
-		hull(){
-			translate([25,54-9,largeur/2-dec_trou_serrage]){rotate([0,90,0])cylinder(r=r_m3, h=100, $fn=50);}
-			translate([25,54-12,largeur/2-dec_trou_serrage]){rotate([0,90,0])cylinder(r=r_m3, h=100, $fn=50);}
-		}
+		//trou passage serrage vis
+		translate([25,54-10.5,largeur/2-dec_trou_serrage]){rotate([0,90,0])cylinder(r=r_m3+0.5, h=100, $fn=50);}
+		translate([50,54-10.5,largeur/2-dec_trou_serrage]){rotate([0,90,0])cylinder(r=ecrou_m3, h=20, $fn=6);}
+		
 
 		hull(){
 			//extrusion pour charnière
@@ -101,4 +123,4 @@ module extrudeur(){
 
 extrudeur();
 
-translate([120,0,0]){rotate([0,0,90])support_608zz();}
+//support_608zz();
