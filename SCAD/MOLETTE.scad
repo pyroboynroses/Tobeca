@@ -1,4 +1,4 @@
-r_molette=12.5;
+r_molette=11;
 r_trou=1.5;
 trou_m3=2;
 ecrou_m3=3.3;

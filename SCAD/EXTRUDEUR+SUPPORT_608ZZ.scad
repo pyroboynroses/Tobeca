@@ -47,13 +47,13 @@ module support_608zz(){
 }
 
 module trous_moteur(){
-		cylinder(r=r_m3, h=largeur+10, $fn=50);
-		translate([31,0,0]){cylinder(r=r_m3, h=largeur+10, $fn=50);}
+		cylinder(r=r_m3+0.25, h=largeur+10, $fn=50);
+		translate([31,0,0]){cylinder(r=r_m3+0.25, h=largeur+10, $fn=50);}
 }
 
 module flanc_charniere(){
 	difference(){
-		cube([19,11,7]);
+		cube([15,11,7]);
 		
 		translate([11,6,-5]){cylinder(r=r_m3, h=15, $fn=50);}
 		translate([11,6,5]){cylinder(r1=r_m3, r2=r_m3+1, h=2, $fn=50);}
@@ -71,6 +71,7 @@ module extrudeur(){
 
 			//partie générale
 			translate([30,10,0]){cube([25,44,largeur]);}
+			translate([27,10,0]){cube([25,20,largeur]);}
 			
 
 			//débord pour fixation moteur
@@ -97,8 +98,12 @@ module extrudeur(){
 		translate([40.5,48.5,-5]){rotate([0,0,-45])trous_moteur();}
 
 		//trou général pour passage du filament
+		
 		translate([longueur/2,-5,largeur/2]){rotate([-90,0,0])cylinder(r=r_trou_filament, h=25, $fn=50);}
-		translate([longueur/2,25,largeur/2]){rotate([-90,0,0])cylinder(r=r_trou_filament+0.5, h=100, $fn=50);}
+		hull(){
+		translate([longueur/2,25,largeur/2]){rotate([-90,0,0])cylinder(r=r_trou_filament-0.5, h=100, $fn=50);}
+		translate([longueur/2,25,largeur/2+2]){rotate([-90,0,0])cylinder(r=r_trou_filament-0.5, h=100, $fn=50);}
+		}
 
 		//trou central
 		translate([40,27,-5]){cylinder(r=12, h=largeur+10, $fn=50);}
@@ -111,16 +116,22 @@ module extrudeur(){
 
 		hull(){
 			//extrusion pour charnière
-			translate([24,10,-5]){cylinder(r=5, h=largeur+10, $fn=50);}
-			translate([25,10,-5]){cylinder(r=5, h=largeur+10, $fn=50);}
-			translate([21,13,-5]){cylinder(r=5, h=largeur+10, $fn=50);}
+			translate([21,10,-5]){cylinder(r=5, h=largeur+10, $fn=50);}
+			translate([22,10,-5]){cylinder(r=5, h=largeur+10, $fn=50);}
+			translate([18,13,-5]){cylinder(r=5, h=largeur+10, $fn=50);}
 		}
+
+		//extrusion pour ventilation proche trou d'entrée
+		translate([longueur/2+3,-5,0]){rotate([-90,0,0])cylinder(r=largeur/2-r_trou_filament-1, h=30, $fn=100);}
+		translate([longueur/2,-5,largeur/2]){rotate([-90,0,0])cylinder(r=5, h=10, $fn=50);}
+		translate([longueur/2,-5,largeur/2]){rotate([-90,0,0])cylinder(r=9, h=7, $fn=50);}
+		
 	}
 	//ajout des flancs pour la charnière
-	translate([15,4,0]){flanc_charniere();}
-	translate([15,4,largeur-7]){flanc_charniere();}
+	translate([12,4,0]){flanc_charniere();}
+	translate([12,4,largeur-7]){flanc_charniere();}
 }
 
 extrudeur();
 
-//support_608zz();
+//translate([80,0,0]){support_608zz();}

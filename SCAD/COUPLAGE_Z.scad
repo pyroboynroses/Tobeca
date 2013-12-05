@@ -1,5 +1,5 @@
-external_diam=20;
-top_diam=8.2;
+external_diam=16;
+top_diam=5.4;
 bottom_diam=5.4;
 holder=9;
 height=30;
