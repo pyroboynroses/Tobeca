@@ -13,7 +13,7 @@ module charniere(){
 
 		}
 		//pente dans la pièce
-		translate([10.5,-5,2]){rotate([0,-50,0])cube([10,l_char+10,20]);}
+		translate([10.5,-5,ep_plaque]){rotate([0,-50,0])cube([10,l_char+10,20]);}
 		//trou de charnière
 		translate([0,-5,h_char/2]){rotate([-90,0,0])cylinder(r=r_m3, h=20, $fn=50);}
 
@@ -36,6 +36,10 @@ module plaque(){
 
 		//trou de fixation LED
 		translate([10+32+11,7+16,-5]){cylinder(r=4, h=10, $fn=100);}
+
+		//allègement de la pièce
+		translate([62,0,-5]){cylinder(r=16, h=10, $fn=100);}
+		translate([62,46,-5]){cylinder(r=16, h=10, $fn=100);}
 
 	}
 

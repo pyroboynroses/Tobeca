@@ -2,18 +2,19 @@ largeur=75;
 longueur=28;
 r_tube=7.35;
 r_ext=10;
+r_ext2=7;
 r_tube_l=7;
 contact_tube=3;
 r_m3=2;
 r_ecrou_m3=3.3;
 r_arbre=4;
 prof_arbre=17;
-r_ecrou_m8=7.7;
-r_m8=4.5;
-h_ecrou_m8=8;
-height1=35;
+r_ecrou_m5=4;
+r_m5=3;
+h_ecrou_m5=5;
+height1=30;
 height2=19;
-ep_trou_m8=2;
+ep_trou_m5=2;
 entraxe_tubes=55;
 l_pass_tige_filetee=35;
 l_lameflex=1;
@@ -23,13 +24,13 @@ l_fix=7;
 module passage_tube(HEIGHT){
 	difference(){
 		union(){
-			cylinder(r=r_ext, h=HEIGHT, $fn=50);
+			cylinder(r=r_ext, h=HEIGHT, $fn=200);
 			translate([0,-r_ext,0]){cube([r_ext,2*r_ext,HEIGHT]);}
 		}
-		translate([0,0,-5]){cylinder(r=r_tube, h=HEIGHT+10, $fn=50);}
-		translate([0,0,contact_tube]){cylinder(r1=r_tube, r2=r_tube_l, h=contact_tube, $fn=50);}
-		translate([0,0,contact_tube*2]){cylinder(r=r_tube_l, h=HEIGHT-contact_tube*4, $fn=50);}
-		translate([0,0,HEIGHT-contact_tube*2]){cylinder(r1=r_tube_l, r2=r_tube, h=contact_tube, $fn=50);}
+		translate([0,0,-5]){cylinder(r=r_tube, h=HEIGHT+10, $fn=200);}
+		translate([0,0,contact_tube]){cylinder(r1=r_tube, r2=r_tube_l, h=contact_tube, $fn=100);}
+		translate([0,0,contact_tube*2]){cylinder(r=r_tube_l, h=HEIGHT-contact_tube*4, $fn=100);}
+		translate([0,0,HEIGHT-contact_tube*2]){cylinder(r1=r_tube_l, r2=r_tube, h=contact_tube, $fn=100);}
 
 	}
 }
@@ -37,19 +38,18 @@ module passage_tube(HEIGHT){
 module passage_tige_filetee(){
 	difference(){
 		union(){
-			translate([0,l_pass_tige_filetee/2,0]){cylinder(r=r_ext, h=height1, $fn=50);}
-			cube([7.5,l_pass_tige_filetee,height1-10]);
+			translate([0,l_pass_tige_filetee/2,0]){cylinder(r=r_ext2, h=height2, $fn=200);}
+			cube([7.5,l_pass_tige_filetee,height2]);
 		}
 		translate([7.5,0,-5]){cube([10,l_pass_tige_filetee,height1+10]);}
 
-		//passage pour écrou M8
-		translate([0,l_pass_tige_filetee/2,-5]){cylinder(r=r_ecrou_m8, h=h_ecrou_m8+4, $fn=6);}
-		translate([0,l_pass_tige_filetee/2,-5]){cylinder(r=r_m8, h=50, $fn=50);}
-		translate([0,l_pass_tige_filetee/2,h_ecrou_m8+ep_trou_m8]){cylinder(r=r_ecrou_m8+0.3, h=50, $fn=6);}
+		//passage pour écrou m5
+		translate([0,l_pass_tige_filetee/2,height2-5]){cylinder(r=r_ecrou_m5, h=h_ecrou_m5+4, $fn=6);}
+		translate([0,l_pass_tige_filetee/2,-5]){cylinder(r=r_m5, h=50, $fn=50);}
 
-		//trous pour vissage et blocage écrou M8
-		translate([2.5,l_pass_tige_filetee/2-9,-5]){cylinder(r=1.5, h=height1-6, $fn=50);}
-		translate([2.5,l_pass_tige_filetee/2+9,-5]){cylinder(r=1.5, h=height1-6, $fn=50);}
+		//trous pour vissage et blocage écrou m5
+		translate([3,l_pass_tige_filetee/2-8,-5]){cylinder(r=1.5, h=height1-5, $fn=50);}
+		translate([3,l_pass_tige_filetee/2+8,-5]){cylinder(r=1.5, h=height1-5, $fn=50);}
 		
 	}
 }
@@ -63,7 +63,7 @@ module fixation_x(){
 		cube([longueur,largeur,height2]);
 
 		//trou moteur
-		translate([21,largeur/2,-5]){cylinder(r=16, h=height1+10, $fn=50);}
+		translate([21,largeur/2,-5]){cylinder(r=16, h=height1+10, $fn=200);}
 		translate([21,largeur/2-16,-5]){cube([largeur,32,height2+20]);}
 
 		//trous de fixation du moteur
