@@ -9,9 +9,9 @@ r_m3=2;
 r_ecrou_m3=3.3;
 r_arbre=4;
 prof_arbre=17;
-r_ecrou_m5=4;
-r_m5=3;
-h_ecrou_m5=5;
+r_ecrou_m5=4.5;
+r_m5=3.5;
+h_ecrou_m5=4;
 height1=30;
 height2=19;
 ep_trou_m5=2;
@@ -44,12 +44,12 @@ module passage_tige_filetee(){
 		translate([7.5,0,-5]){cube([10,l_pass_tige_filetee,height1+10]);}
 
 		//passage pour écrou m5
-		translate([0,l_pass_tige_filetee/2,height2-5]){cylinder(r=r_ecrou_m5, h=h_ecrou_m5+4, $fn=6);}
+		translate([0,l_pass_tige_filetee/2,height2-h_ecrou_m5]){cylinder(r=r_ecrou_m5, h=h_ecrou_m5+1, $fn=6);}
 		translate([0,l_pass_tige_filetee/2,-5]){cylinder(r=r_m5, h=50, $fn=50);}
 
 		//trous pour vissage et blocage écrou m5
-		translate([3,l_pass_tige_filetee/2-8,-5]){cylinder(r=1.5, h=height1-5, $fn=50);}
-		translate([3,l_pass_tige_filetee/2+8,-5]){cylinder(r=1.5, h=height1-5, $fn=50);}
+		translate([3,l_pass_tige_filetee/2-7.5,-5]){cylinder(r=1.5, h=height1-5, $fn=50);}
+		translate([3,l_pass_tige_filetee/2+7.5,-5]){cylinder(r=1.5, h=height1-5, $fn=50);}
 		
 	}
 }

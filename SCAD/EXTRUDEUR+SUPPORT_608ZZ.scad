@@ -102,7 +102,7 @@ module extrudeur(){
 		translate([longueur/2,-5,largeur/2]){rotate([-90,0,0])cylinder(r=r_trou_filament, h=25, $fn=50);}
 		hull(){
 		translate([longueur/2,25,largeur/2]){rotate([-90,0,0])cylinder(r=r_trou_filament-0.5, h=100, $fn=50);}
-		translate([longueur/2,25,largeur/2+2]){rotate([-90,0,0])cylinder(r=r_trou_filament-0.5, h=100, $fn=50);}
+		translate([longueur/2,25,largeur/2+1]){rotate([-90,0,0])cylinder(r=r_trou_filament-0.5, h=100, $fn=50);}
 		}
 
 		//trou central
