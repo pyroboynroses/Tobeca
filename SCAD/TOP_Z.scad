@@ -4,6 +4,7 @@ r_tube=6.25;
 r_m3=2;
 ecrou_m3=3.3;
 r_m8=4;
+r_m5=2.5;
 ep=4;
 ep2=3;
 ep_milieu=5;
@@ -39,7 +40,7 @@ module top_z(){
 		//trou pour M8 central
 		translate([-10,entraxe/2,hauteur-6]){rotate([0,90,0])cylinder(h = 30, r = r_m8, $fn=100);}
 		//trou pour tige filetée Z
-		translate([dec_tige,entraxe/2,-10]){cylinder(h = 10+9, r = r_m8+0.25, $fn=100);}
+		translate([dec_tige,entraxe/2,-10]){cylinder(h = 10+9, r = r_m5+0.25, $fn=100);}
 		
 
 
