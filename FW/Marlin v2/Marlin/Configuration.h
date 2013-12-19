@@ -361,8 +361,9 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   {64, 64, 2560,152}    // only TO-002 (T5)
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   {46, 46, 2560,152}    // from TO-003 to TO-006 (T5)
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   {46, 64, 2560,152}    // from TO-007 to TO-015 (T5)
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {64, 64, 2560,152}    // from TO-016 to TO-0 (T5)
-//#define DEFAULT_AXIS_STEPS_PER_UNIT   {66.84, 66.84, 2560,152}    // from T0-0 to TO-0 and TP-001 (HTD3M)
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {64, 64, 2560,152}    // from TO-016 to TO-049 (T5 + M8)
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   {64, 64, 4000,152}    // from TO-050 to TO-0 (T5 + M5)
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   {66.84, 66.84, 4000,152}    // from T0-0 to TO-0 (HTD3M + M5)
 
 
 #define DEFAULT_MAX_FEEDRATE          {400, 400, 2, 60}    // (mm/sec)    45
