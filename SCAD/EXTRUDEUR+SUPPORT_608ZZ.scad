@@ -99,7 +99,7 @@ module extrudeur(){
 		translate([longueur-5,10-2.5,largeur/2]){rotate([-90,0,0])cylinder(r=ecrou_m3, h=10, $fn=6);}
 
 		//placement de trous pour fixation du moteur
-		translate([40.5,48.5,-5]){rotate([0,0,-45])trous_moteur();}
+		translate([39.5,48.5,-5]){rotate([0,0,-45])trous_moteur();}
 
 		//trou général pour passage du filament
 		
@@ -143,7 +143,8 @@ module extrudeur(){
 	translate([12,4,largeur-7]){flanc_charniere();}
 }
 
-translate([0,0,largeur]){rotate([0,180,0])extrudeur();}
+//extrudeur();
+translate([-20,0,largeur]){rotate([0,180,0])extrudeur();}
 
 //translate([80,0,0]){support_608zz();}
 //support_608zz();
