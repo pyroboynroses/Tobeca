@@ -135,7 +135,7 @@ module extrudeur(){
 		//extrusion pour ventilation proche trou d'entrée
 		translate([longueur/2+3,-5,0]){rotate([-90,0,0])cylinder(r=largeur/2-r_trou_filament-1, h=30, $fn=100);}
 		translate([longueur/2,-5,largeur/2]){rotate([-90,0,0])cylinder(r=5, h=12, $fn=100);}
-		translate([longueur/2,-5,largeur/2]){rotate([-90,0,0])cylinder(r=9, h=10, $fn=100);}
+		translate([longueur/2,-5,largeur/2]){rotate([-90,0,0])cylinder(r=9, h=9, $fn=100);}
 		
 	}
 	//ajout des flancs pour la charnière
