@@ -31,7 +31,7 @@ module support_608zz(){
 			translate([26+12,8,ep/2]){rotate([-90,0,0])cylinder(r=ep/2, h=largeur-8*2, $fn=50);}
 
 			//butée haute
-			translate([0,0,ep]){cube([5,largeur,4]);}
+			translate([0,0,ep]){cube([5,largeur,2]);}
 
 			translate([5,dec_trou_serrage,0]){cylinder(r=8, h=ep/2, $fn=50);}
 		translate([5,largeur-dec_trou_serrage,0]){cylinder(r=8, h=ep/2, $fn=50);}
@@ -144,7 +144,7 @@ module extrudeur(){
 }
 
 //extrudeur();
-translate([-20,0,largeur]){rotate([0,180,0])extrudeur();}
+//translate([-20,0,largeur]){rotate([0,180,0])extrudeur();}
 
 //translate([80,0,0]){support_608zz();}
-//support_608zz();
+support_608zz();
