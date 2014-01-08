@@ -1,10 +1,9 @@
 ep=2;
-r_douille=8.3;
-largeur=18;
+r_douille=9.7; //8.3 pour LM8UU et 9.7 pour LM10UU
+largeur=22; //18 pour LM8UU et 22 pour LM10UU
 h1=12;
 h2=16;
-l_fixe=25;
-l_flottant=31;
+l_fixe=29; //25 pour LM8UU et 29 pour LM10UU
 trou_m3=2;
 ecrou_m3=3.3;
 pass_collier=4;
@@ -20,20 +19,17 @@ module support_douille_fixe(){
 
 		//trous pour écrou de fixation
 		translate([l_fixe/2,largeur/2,-5]){cylinder(h=h2+10, r=trou_m3, $fn=50);}
-		translate([l_fixe/2,largeur/2,3]){cylinder(h=h2+10, r=ecrou_m3, $fn=6);}
+		translate([l_fixe/2,largeur/2,2]){cylinder(h=h2+10, r=ecrou_m3, $fn=6);}
 
 		//creux pour passage collier
 		translate([3,-2,-5]){cube([pass_collier,ep_collier+2,h2+10]);}
-		translate([18,-2,-5]){cube([pass_collier,ep_collier+2,h2+10]);}
+		translate([l_fixe-3-pass_collier,-2,-5]){cube([pass_collier,ep_collier+2,h2+10]);}
 		translate([3,largeur-ep_collier,-5]){cube([pass_collier,ep_collier+2,h2+10]);}
-		translate([18,largeur-ep_collier,-5]){cube([pass_collier,ep_collier+2,h2+10]);}
+		translate([l_fixe-3-pass_collier,largeur-ep_collier,-5]){cube([pass_collier,ep_collier+2,h2+10]);}
 		translate([3,-5,-2]){cube([pass_collier,largeur+10,pass_collier+2]);}
-		translate([18,-5,-2]){cube([pass_collier,largeur+10,pass_collier+2]);}
+		translate([l_fixe-3-pass_collier,-5,-2]){cube([pass_collier,largeur+10,pass_collier+2]);}
 		
 	}
-}
-
-module support_douille_flottant(){
 }
 
 module lamelle_assemblage(){

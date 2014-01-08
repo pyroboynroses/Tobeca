@@ -1,5 +1,5 @@
-longueur=117;
-largeur=85.5;
+longueur=128; //117 pour v1
+largeur=95; //86 pour v1
 ep=2;
 r_pointe=6;
 dec=1.5;

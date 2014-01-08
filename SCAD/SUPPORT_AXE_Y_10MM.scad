@@ -1,3 +1,5 @@
+//Dessiné pour arbres de 10mm. Voir le fichier SUPPORT_AXE_Y_8MM.stl pour la version pour arbres 8mm.
+
 r_tige=4.1;
 r_cote=4;
 r_m3=2;
@@ -8,7 +10,7 @@ hauteur=6;
 module support_axe_y(){
 	difference(){
 		hull(){
-			cylinder(h=hauteur, r=r_tige+2, $fn=100);
+			cylinder(h=hauteur, r=r_tige+3, $fn=100);
 			translate([ecart,0,0]){cylinder(h=hauteur, r=r_cote, $fn=100);}
 			translate([-ecart,0,0]){cylinder(h=hauteur, r=r_cote, $fn=100);}
 		}

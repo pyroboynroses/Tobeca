@@ -324,14 +324,12 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 #define NUM_AXIS 4 // The axis order in all axis related arrays is X, Y, Z, E
 #define HOMING_FEEDRATE {5000, 5000, 200, 0}  // set the homing speeds (mm/min)
 
-// default settings 
-
-//#define DEFAULT_AXIS_STEPS_PER_UNIT   {64, 64, 2560,152}    // only TO-002 (T5)
+// default settings
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   {46, 46, 2560,152}    // from TO-003 to TO-006 (T5)
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   {46, 64, 2560,152}    // from TO-007 to TO-015 (T5)
-//#define DEFAULT_AXIS_STEPS_PER_UNIT   {64, 64, 2560,152}    // from TO-016 to TO-049 (T5 + M8)
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {64, 64, 4000,152}    // from TO-050 to TO-0 (T5 + M5)
-//#define DEFAULT_AXIS_STEPS_PER_UNIT   {66.84, 66.84, 4000,152}    // from T0-0 to TO-0 (HTD3M + M5)
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   {64, 64, 2560,152}    // from TO-016 to TO-045 (T5 + M8)
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   {64, 64, 4000,152}    // from TO-046 to TO-048 (T5 + M5)
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {66.84, 66.84, 4000,152}    // from T0-049 to TO-0 (HTD3M + M5)
 
 
 #define DEFAULT_MAX_FEEDRATE          {500, 500, 3, 60}    // (mm/sec)

@@ -32,17 +32,6 @@ difference(){
 	translate([60,9,1.7]){cylinder(h = 7, r = r_ecrou_m3, $fn=6);}
 }
 }
-module fix_ventilateur(){
-difference(){	
-	translate([22,22.5,4.5]){rotate([0,90,0])cylinder(h = 7, r = 4.5, $fn=100);}
-	translate([22,22.5,4.5]){rotate([0,90,0])cylinder(h = 10, r = r_trou_m3, $fn=100);}
-}
-difference(){	
-	translate([22,18,0]){cube([ 7, 4.5, 9 ]);}
-	translate([22,22.5,4.5]){rotate([0,90,0])cylinder(h = 10, r = 2, $fn=100);}
-}
-}
+
 
 base_piece();
-//fix_ventilateur();
-//translate([19,0,0]){fix_ventilateur();}
