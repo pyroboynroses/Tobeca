@@ -1,6 +1,6 @@
 //Dessiné pour arbres de 10mm. Voir le fichier SUPPORT_AXE_Y_8MM.stl pour la version pour arbres 8mm.
 
-r_tige=4.1;
+r_tige=5.1;
 r_cote=4;
 r_m3=2;
 r_ecrou_m3=3.3;
