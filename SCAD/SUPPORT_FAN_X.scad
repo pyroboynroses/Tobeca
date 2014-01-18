@@ -12,7 +12,6 @@ module charniere(){
 			cube([6,l_char,h_char]);
 			hull(){
 			translate([0,0,h_char/2]){rotate([-90,0,0])cylinder(r=h_char/2, h=l_char, $fn=50);}
-			//translate([0,0,h_char/2+2]){rotate([-90,0,0])cylinder(r=h_char/2, h=l_char, $fn=50);}
 			}
 
 		}
@@ -74,9 +73,7 @@ difference(){
 		translate([-5,10+ecart_char+l_char,2]){cube([12,ecart_char,50]);}
 		
 		//trous pour fixation ventilateur
-		//translate([0,7,-5]){cylinder(r=r_m3, h=10, $fn=50);}
 		translate([32,7,-5]){cylinder(r=r_m3, h=10, $fn=50);}
-		//translate([10,7+32,-5]){cylinder(r=r_m3, h=10, $fn=50);}
 		translate([32,7+32,-5]){cylinder(r=r_m3, h=10, $fn=50);}
 
 		//trou central ventilateur
@@ -103,6 +100,9 @@ difference(){
 	//places pour charnière du chariot x
 	translate([-5,l_char,-2]){cube([12,ecart_char,10]);}
 	translate([-5,l_char*2+ecart_char,-2]){cube([12,ecart_char,10]);}
+
+	//extrusion pour épouser forme des roulements
+	translate([9,-5,20]){rotate([-90,0,0])cylinder(r=8, h=100, $fn=100);}
 
 }
 translate([0,-14,0]){plaque_led();}

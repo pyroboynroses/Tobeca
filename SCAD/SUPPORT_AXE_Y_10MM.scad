@@ -5,7 +5,7 @@ r_cote=4;
 r_m3=2;
 r_ecrou_m3=3.3;
 ecart=8;
-hauteur=6;
+hauteur=8;
 
 module support_axe_y(){
 	difference(){
