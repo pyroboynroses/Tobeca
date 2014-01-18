@@ -32,6 +32,8 @@ module entonnoir(){
 		translate([-58,-50,-10]){rotate([0,36,0])cube([30,100,100]);}
 
 		translate([-5,-50,-50]){cube([100,100,52]);}
+
+		translate([20,-10,27]){rotate([0,-28,0])cube([10,100,40]);}
 	}
 
 	intersection(){ //fermeture plate de l'entonnoir
@@ -102,7 +104,11 @@ difference(){
 	translate([-5,l_char*2+ecart_char,-2]){cube([12,ecart_char,10]);}
 
 	//extrusion pour épouser forme des roulements
-	translate([9,-5,20]){rotate([-90,0,0])cylinder(r=8, h=100, $fn=100);}
+	translate([33.5,-50,33.5]){rotate([-90,0,45])cylinder(r=35, h=100, $fn=300);}
+	translate([33.5,2*ecart_char+3*l_char+50,33.5]){rotate([0,-90,45])cylinder(r=35, h=100, $fn=300);}
+
+	translate([-15.5,-5,32]){rotate([270,0,0])cylinder(r=35, h=100, $fn=300);}
+
 
 }
 translate([0,-14,0]){plaque_led();}
