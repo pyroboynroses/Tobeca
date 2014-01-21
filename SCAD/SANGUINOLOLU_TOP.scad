@@ -19,7 +19,7 @@ module sanguinololu_top(){
 	difference(){
 		cube([longueur+ep*2, largeur+ep*2, ep+4]);
 
-		translate([ep,ep,ep]){cube([longueur+10, largeur, 10]);}
+		translate([ep,ep,ep-1]){cube([longueur+10, largeur, 10]);}
 
 		translate([ep*2+r_pointe+tol,ep*2+r_pointe+tol,-5]){goutte();}
 		translate([ep*2+r_pointe+tol,largeur-r_pointe-ep,-5]){goutte();}

@@ -1,7 +1,7 @@
 longueur=125; //115 pour v1
 largeur=95; //86 pour v1
 hauteur=45;
-epaisseur_mur=1.5;
+epaisseur_mur=2;
 epaisseur_fond=2;
 ep_fan=11;
 ecart_x_trou=94;
@@ -59,16 +59,16 @@ module sanguinololu(){
 		translate([-10,-10,hauteur]){rotate([0,7,0])cube([longueur+20,largeur+20,hauteur]);}
 
 		//trous pour évacuation air
-		/*for (z = [5, 10, 15, 20, 25])
+		for (z = [5, 10, 15, 20, 25])
 		{
     		for (y = [6, 11, 16,21,26,31,36,41,46,51,56,61,66,71,76,81,86])
 			{
     			translate([longueur-5, y+2, z])
     			rotate([0,90,0])cylinder(h = 10, r = r_trou_m3, $fn=50);
 			}
-		}*/
+		}
 
-		for (y = [6, 11, 16,21,26,31,36,41,46,51,56,61,66,71,76,81,86])
+		/*for (y = [6, 11, 16,21,26,31,36,41,46,51,56,61,66,71,76,81,86])
 			{
     			hull(){
 				translate([longueur-5, y+2, 5])
@@ -77,7 +77,7 @@ module sanguinololu(){
 				translate([longueur-5, y+2, 25])
     			rotate([0,90,0])cylinder(h = 10, r = 1.5, $fn=50);
 				}
-			}
+			}*/
 
 		//trou pour passage câbles gauche
 		translate([40,largeur-5,epaisseur_fond]){cube([12,20,hauteur]);}
