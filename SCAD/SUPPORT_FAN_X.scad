@@ -36,12 +36,12 @@ module entonnoir(){
 		translate([20,-10,27]){rotate([0,-28,0])cube([10,100,40]);}
 	}
 
-	intersection(){ //fermeture plate de l'entonnoir
+	/*intersection(){ //fermeture plate de l'entonnoir
 		translate([-23,-50,-11]){rotate([0,36,0])cube([2,100,100]);}
 
 		rotate([0,22,0])cylinder(r1=r_entonnoir+1, r2=5, h=40, $fn=100);
 
-	}
+	}*/
 }
 
 module plaque_led(){
@@ -79,7 +79,7 @@ difference(){
 		translate([32,7+32,-5]){cylinder(r=r_m3, h=10, $fn=50);}
 
 		//trou central ventilateur
-		translate([r_trou_moteur,7+16,-5]){cylinder(r=r_trou_moteur, h=7, $fn=100);}
+		translate([r_trou_moteur,7+16,-5]){cylinder(r=r_trou_moteur+3, h=7, $fn=100);}
 
 		//trou de fixation LED
 		translate([10+32+11,7+16,-5]){cylinder(r=4, h=10, $fn=100);}
@@ -89,7 +89,7 @@ difference(){
 
 }
 charniere();
-translate([0,ecart_char+l_char,0]){charniere();}
+//translate([0,ecart_char+l_char,0]){charniere();}
 translate([0,2*ecart_char+2*l_char,0]){charniere();}
 
 
@@ -100,14 +100,13 @@ difference(){
 	}
 
 	//places pour charnière du chariot x
-	translate([-5,l_char,-2]){cube([12,ecart_char,10]);}
+	translate([-5,l_char,-2]){cube([12,ecart_char+11,10]);}
 	translate([-5,l_char*2+ecart_char,-2]){cube([12,ecart_char,10]);}
 
 	//extrusion pour épouser forme des roulements
 	translate([33.5,-50,33.5]){rotate([-90,0,45])cylinder(r=35, h=100, $fn=300);}
-	translate([33.5,2*ecart_char+3*l_char+50,33.5]){rotate([0,-90,45])cylinder(r=35, h=100, $fn=300);}
 
-	translate([-15.5,-5,32]){rotate([270,0,0])cylinder(r=35, h=100, $fn=300);}
+	translate([5,-5,18]){rotate([270,0,0])cylinder(r=13, h=100, $fn=300);}
 
 
 }
