@@ -1,0 +1,117 @@
+; Generation GCODE par OpenASCAM - Adrien Grelet - 2013
+; Generation fichier : Thu Mar 06 15:35:10 2014
+
+; ep_matiere=27
+; marge_z=5
+; f_deplacement=300
+; f_descente=700
+; z_passe_percer=1
+; off_x=4
+; off_y=0
+; accel=3000
+; d_fraise=3
+; z_passe_decouper=3
+; f_decoupe=500
+; off_z=2
+
+G21 ; set units to millimeters
+G28 ; home all axes
+G90 ; use absolute coordinates
+G1 F300 ; vitesse de déplacement des axes
+G1 Z34.0 F3000 ; hauteur de déplacement Z, incluant son offset
+
+; d_bord=4.5
+; longueur=443
+; largeur=414
+G1 F300
+G1 X8.5 Y156.0 F3000
+G1 F700
+G1 Z29.0 F3000
+G1 F500
+G1 Z2.0 F700
+G1 F700
+G1 Z34.0 F3000
+
+G1 F300
+G1 X8.5 Y287.0 F3000
+G1 F700
+G1 Z29.0 F3000
+G1 F500
+G1 Z2.0 F700
+G1 F700
+G1 Z34.0 F3000
+
+G1 F300
+G1 X150.0 Y438.5 F3000
+G1 F700
+G1 Z29.0 F3000
+G1 F500
+G1 Z2.0 F700
+G1 F700
+G1 Z34.0 F3000
+
+G1 F300
+G1 X272.0 Y438.5 F3000
+G1 F700
+G1 Z29.0 F3000
+G1 F500
+G1 Z2.0 F700
+G1 F700
+G1 Z34.0 F3000
+
+G1 F300
+G1 X362.0 Y393.0 F3000
+G1 F700
+G1 Z29.0 F3000
+G1 F500
+G1 Z2.0 F700
+G1 F700
+G1 Z34.0 F3000
+
+G1 F300
+G1 X413.5 Y287.0 F3000
+G1 F700
+G1 Z29.0 F3000
+G1 F500
+G1 Z2.0 F700
+G1 F700
+G1 Z34.0 F3000
+
+G1 F300
+G1 X358.0 Y263.0 F3000
+G1 F700
+G1 Z29.0 F3000
+G1 F500
+G1 Z2.0 F700
+G1 F700
+G1 Z34.0 F3000
+
+G1 F300
+G1 X413.5 Y156.0 F3000
+G1 F700
+G1 Z29.0 F3000
+G1 F500
+G1 Z2.0 F700
+G1 F700
+G1 Z34.0 F3000
+
+G1 F300
+G1 X272.0 Y4.5 F3000
+G1 F700
+G1 Z29.0 F3000
+G1 F500
+G1 Z2.0 F700
+G1 F700
+G1 Z34.0 F3000
+
+G1 F300
+G1 X150.0 Y4.5 F3000
+G1 F700
+G1 Z29.0 F3000
+G1 F500
+G1 Z2.0 F700
+G1 F700
+G1 Z34.0 F3000
+
+M42 P7 S0 ; on arrête la fraise
+G28 X0 Y0 ; on retourne au home mais on laisse le Z à sa dernière position

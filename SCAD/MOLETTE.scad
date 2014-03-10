@@ -1,7 +1,7 @@
-r_molette=10; //10 pour les petites et 12 pour les grandes
+r_molette=12; //10 pour les petites et 12 pour les grandes
 r_trou=1.5;
 trou_m3=2;
-ecrou_m3=3.3;
+ecrou_m3=3.2;
 ep=5;
 nb_trou=12;
 

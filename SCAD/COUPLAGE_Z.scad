@@ -1,6 +1,6 @@
 external_diam=16;
-top_diam=5.4;
-bottom_diam=5.4;
+top_diam=5.2;
+bottom_diam=5.2;
 holder=9;
 height=30;
 M3_nut_head=7;
@@ -17,7 +17,7 @@ module angle_cube(size, side=3)
 	minkowski()
 	{
 		cube([size[0]-side, size[1]-side, size[2]/2], center=true);
-		rotate([0, 0, 45]) cube([side/1.4,side/1.428718,size[2]/2], true);
+		rotate([0, 0, 0]) cube([side/1.4,side/1.428718,size[2]/2], true);
 	}
 }
 
@@ -30,7 +30,7 @@ module coupler()
 			hull()
 			{
 				cylinder(r=external_diam/2, h=height, center=true);
-				translate([external_diam/2, 0, 0]) rotate([90, 0, 0]) angle_cube([holder, height, 10], 8);
+				translate([external_diam/2, 0, 0]) rotate([90, 0, 0]) angle_cube([holder, height+2.5, 10], 8);
 			}
 		}
 		union()

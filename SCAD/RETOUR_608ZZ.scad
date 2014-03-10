@@ -20,11 +20,11 @@
 
 // tuneable constants
 
-teeth = 18;			//29 dents pour HTD3M
+teeth = 29;			//29 dents pour HTD3M
 						//18 dents pour T5
-profile = 6;		// 1=MXL 2=40DP 3=XL 4=H 5=T2.5 6=T5 7=T10 8=AT5 9=HTD_3mm 10=HTD_5mm 11=HTD_8mm 12=GT2_2mm 13=GT2_3mm 14=GT2_5mm
+profile = 9;		// 1=MXL 2=40DP 3=XL 4=H 5=T2.5 6=T5 7=T10 8=AT5 9=HTD_3mm 10=HTD_5mm 11=HTD_8mm 12=GT2_2mm 13=GT2_3mm 14=GT2_5mm
 
-motor_shaft = 22.5;	//D=22mm exactement pour 608ZZ, mettre 22.5 pour ajustement aisé
+motor_shaft = 22;	//D=22mm exactement pour 608ZZ, mettre 22.5 pour ajustement aisé
 m3_dia = 3.2;		// 3mm hole diameter
 m3_nut_hex = 1;		// 1 for hex, 0 for square nut
 m3_nut_flats = 5.7;	// normal M3 hex nut exact width = 5.5

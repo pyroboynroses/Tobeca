@@ -1,0 +1,67 @@
+#Fichier modèle pour les perçages
+#Il faut absolument respecter l'ordre suivant dans les modules : PARAMETRES, VARIABLES, INSTRUCTIONS
+
+PARAMETRES{
+	#Permet de stocker tous les paramètres de perçage/usinage qui serviront à la génération du GCODE
+	ep_matiere=9; #épaisseur de la pièce à percer en mm
+	marge_z=5; #marge Z au dessus de la pièce pour déplacements en mm
+	f_deplacement=300; #vitesse de déplacement des axes mm/min
+	f_descente=700; #vitesse du descente du forêt en mm/min
+	z_passe_percer=1; #nombre de passes pour perçage
+	off_x=4; #offset initial en X
+	off_y=0; #offset initial en Y
+	accel=3000; #acceleration sur les déplacements
+	d_fraise=3; #diamètre de la fraise
+	z_passe_decouper=3; #nombre de passes pour l'usinage
+	f_decoupe=500; #vitesse de découpe
+	off_z=2; #offset initial en Z
+}
+
+VARIABLES{
+	#Emplacement pour gérer directement des variables dans les instructions
+}
+
+INSTRUCTIONS{
+	#Positionnement des points de perçage percer, la première valeur est en X et la seconde est en Y.
+	trou([20,10]);
+	trou([20,20]);
+	trou([20,30]);
+	trou([20,40]);
+	trou([20,50]);
+	trou([20,60]);
+	trou([20,70]);
+	trou([20,80]);
+	trou([20,90]);
+	trou([20,100]);
+	trou([20,110]);
+	trou([20,120]);
+	trou([20,130]);
+	trou([20,140]);
+	trou([20,150]);
+	trou([20,160]);
+	trou([20,170]);
+	trou([20,180]);
+	trou([20,190]);
+	trou([20,200]);
+	trou([20,210]);
+	trou([20,220]);
+	trou([20,230]);
+	trou([20,240]);
+	trou([20,250]);
+	trou([20,260]);
+	trou([20,270]);
+	trou([20,280]);
+	trou([20,290]);
+	trou([20,300]);
+	trou([20,310]);
+	trou([20,320]);
+	trou([20,330]);
+	trou([20,340]);
+	trou([20,350]);
+	trou([20,360]);
+	trou([20,370]);
+	trou([20,380]);
+	trou([20,390]);
+	trou([20,400]);
+
+}
