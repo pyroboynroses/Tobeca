@@ -9,7 +9,7 @@ PARAMETRES{
 	f_descente=500; #vitesse du descente du forêt en mm/min
 	z_passe_percer=1; #nombre de passes pour perçage
 	off_x=4; #offset initial en X
-	off_y=0; #offset initial en Y
+	off_y=-1; #offset initial en Y
 	accel=3000; #acceleration sur les déplacements
 	d_fraise=3; #diamètre de la fraise
 	z_passe_decouper=3; #nombre de passes pour l'usinage

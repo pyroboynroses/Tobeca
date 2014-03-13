@@ -9,7 +9,7 @@ PARAMETRES{
 	f_descente=700; #vitesse du descente du forêt en mm/min
 	z_passe_percer=1; #nombre de passes pour perçage
 	off_x=4; #offset initial en X
-	off_y=0; #offset initial en Y
+	off_y=-1; #offset initial en Y
 	accel=3000; #acceleration sur les déplacements
 	d_fraise=3; #diamètre de la fraise
 	z_passe_decouper=3; #nombre de passes pour l'usinage
@@ -46,14 +46,11 @@ INSTRUCTIONS{
 	trou([24.5,237]);
 	trou([41,277]);
 	
-	#Trou pour passage interrupteur de façade
-	trou([100,277]);
-	
 	#Trous pour fixer les arbres de guidage Y
-	trou([130,285]);
-	trou([130,269]);
-	trou([280,285]);
-	trou([280,269]);
+	trou([130,288]);
+	trou([130,266]);
+	trou([280,288]);
+	trou([280,266]);
 	
 	#Fermeture grenouille
 	trou([355,277]);
@@ -67,8 +64,8 @@ INSTRUCTIONS{
 	
 	#Perçages centre
 	#Trous pour fixer les arbres de guidage Y
-	trou([280,185]);
-	trou([280,169]);
+	trou([280,188]);
+	trou([280,166]);
 	
 	#Trous pour PLAQUE_ARRIERE
 	trou([257.5,159]);
@@ -83,8 +80,8 @@ INSTRUCTIONS{
 	trou([152.5,159]);
 	
 	#Trous pour fixer les arbres de guidage Y
-	trou([130,185]);
-	trou([130,169]);
+	trou([130,188]);
+	trou([130,166]);
 	
 	#Fermeture grenouille
 	trou([371.5,132]);

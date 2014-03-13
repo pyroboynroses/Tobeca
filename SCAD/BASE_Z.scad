@@ -18,9 +18,15 @@ module base_z(){
 		translate([pos_tube,14.5+ecart,-5]){cylinder(h=20, r=r_tube, $fn=50);}
 
 		//trous pour vissage
-		translate([pos_tube-10,14.5,-5]){cylinder(h=20, r=trou_m3, $fn=50);}
-		translate([pos_tube-10,14.5+ecart,-5]){cylinder(h=20, r=trou_m3, $fn=50);}
-		translate([largeur-5,longueur/2,-5]){cylinder(h=20, r=trou_m3, $fn=50);}
+		hull(){
+		translate([pos_tube-10,14.5-2,-5]){cylinder(h=20, r=trou_m3, $fn=50);}
+		translate([pos_tube-10,14.5+2,-5]){cylinder(h=20, r=trou_m3, $fn=50);}
+		}
+
+		hull(){
+		translate([pos_tube-10,14.5+ecart-2,-5]){cylinder(h=20, r=trou_m3, $fn=50);}
+		translate([pos_tube-10,14.5+ecart+2,-5]){cylinder(h=20, r=trou_m3, $fn=50);}
+		}
 
 		//cassage des coins
 		translate([20,0,-5]){rotate([0,0,-35])cube([30,30,20]);}
