@@ -6,6 +6,7 @@ h2=5;
 ecart=55;
 r_tube=6.25;
 pos_tube=15;
+r_ecrou_m3=3.4;
 
 module base_z(){
 	difference(){
@@ -23,9 +24,21 @@ module base_z(){
 		translate([pos_tube-10,14.5+2,-5]){cylinder(h=20, r=trou_m3, $fn=50);}
 		}
 
+		//empreinte écrous de serrage
+		hull(){
+		translate([pos_tube-10,14.5-2,3]){rotate([0,0,30])cylinder(h=20, r=r_ecrou_m3, $fn=6);}
+		translate([pos_tube-10,14.5+2,3]){rotate([0,0,30])cylinder(h=20, r=r_ecrou_m3, $fn=6);}
+		}
+
 		hull(){
 		translate([pos_tube-10,14.5+ecart-2,-5]){cylinder(h=20, r=trou_m3, $fn=50);}
 		translate([pos_tube-10,14.5+ecart+2,-5]){cylinder(h=20, r=trou_m3, $fn=50);}
+		}
+
+		//empreinte écrous de serrage
+		hull(){
+		translate([pos_tube-10,14.5+ecart-2,3]){rotate([0,0,30])cylinder(h=20, r=r_ecrou_m3, $fn=6);}
+		translate([pos_tube-10,14.5+ecart+2,3]){rotate([0,0,30])cylinder(h=20, r=r_ecrou_m3, $fn=6);}
 		}
 
 		//cassage des coins
