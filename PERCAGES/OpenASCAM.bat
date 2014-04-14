@@ -1,3 +1,3 @@
-D:\Dropbox\GitHub\OpenASCAM\OpenASCAM.py
+D:\Dropbox\GitHub\OpenASCAM\OpenASCAMcentrage.py
 
 pause

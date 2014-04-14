@@ -15,6 +15,7 @@ PARAMETRES{
 	z_passe_decouper=3; #nombre de passes pour l'usinage
 	f_decoupe=500; #vitesse de découpe
 	off_z=2; #offset initial en Z
+	f_centrage=200; #vitesse de centrage du foret
 }
 
 VARIABLES{
@@ -25,73 +26,70 @@ VARIABLES{
 
 INSTRUCTIONS{
 	#Positionnement des points de perçage percer, la première valeur est en X et la seconde est en Y.
+	#Fermeture grenouille gauche
+	trou([41,35]);
+	trou([57.5,75]);
+	trou([24.5,75]);
 	
-	#Fermeture grenouille
-	trou([24.5,10]);
-	trou([57.5,10]);
-	trou([41,28.5]);
+	#Fermeture grenouille gauche
+	trou([41,120]);
+	trou([57.5,160]);
+	trou([24.5,160]);
 	
-	#Fermeture grenouille
-	trou([41,113.5]);
-	trou([24.5,132]);
-	trou([57.5,132]);
+	#Fermeture grenouille gauche
+	trou([41,211]);
+	trou([57.5,231]);
+	trou([24.5,231]);
 	
-	#Fermeture grenouille
-	trou([41,177]);
-	trou([24.5,217]);
-	trou([57.5,217]);
+	#Fermeture grenouille gauche
+	trou([41,282]);
+	trou([57.5,302]);
+	trou([24.5,302]);
 	
-	#Fermeture grenouille
-	trou([57.5,237]);
-	trou([24.5,237]);
-	trou([41,277]);
+	#Fermeture grenouille droite
+	trou([longueur-57.5,302]);
+	trou([longueur-24.5,302]);
+	trou([longueur-41,282]);
 	
-	#Trous pour fixer les arbres de guidage Y
-	trou([130,288]);
-	trou([130,266]);
-	trou([280,288]);
-	trou([280,266]);
+	#Fermeture grenouille droite
+	trou([longueur-57.5,231]);
+	trou([longueur-24.5,231]);
+	trou([longueur-41,211]);
 	
-	#Fermeture grenouille
-	trou([355,277]);
-	trou([371.5,237]);
-	trou([338.5,237]);
+	#Fermeture grenouille droite
+	trou([longueur-57.5,160]);
+	trou([longueur-24.5,160]);
+	trou([longueur-41,120]);
 	
-	#Fermeture grenouille
-	trou([338.5,217]);
-	trou([371.5,217]);
-	trou([355,177]);
+	#Fermeture grenouille droite
+	trou([longueur-57.5,75]);
+	trou([longueur-24.5,75]);
+	trou([longueur-41,35]);
 	
-	#Perçages centre
-	#Trous pour fixer les arbres de guidage Y
-	trou([280,188]);
-	trou([280,166]);
+	#Trous pour fixer les arbres de guidage Y droite
+	trou([280,24]);
+	trou([280,46]);
+	trou([280,109]);
+	trou([280,131]);
 	
-	#Trous pour PLAQUE_ARRIERE
-	trou([257.5,159]);
-	trou([237,186]);
+	#Trous pour PLAQUE_ARRIERE droite
+	trou([257.5,17]);
+	trou([237,44]);
 	
 	#Trous pour RETOUR_Y
-	trou([222.5,208]);
-	trou([187.5,208]);
+	trou([222.5,66]);
+	trou([187.5,66]);
 	
-	#Trous pour PLAQUE_ARRIERE
-	trou([173,186]);
-	trou([152.5,159]);
+	#Trous pour PLAQUE_ARRIERE gauche
+	trou([173,44]);
+	trou([152.5,17]);
 	
-	#Trous pour fixer les arbres de guidage Y
-	trou([130,188]);
-	trou([130,166]);
+	#Trous pour fixer les arbres de guidage Y gauche
+	trou([130,24]);
+	trou([130,46]);
+	trou([130,109]);
+	trou([130,131]);
 	
-	#Fermeture grenouille
-	trou([371.5,132]);
-	trou([338.5,132]);
-	trou([355,113.5]);
-	
-	#Fermeture grenouille
-	trou([355,28.5]);
-	trou([371.5,10]);
-	trou([338.5,10]);
 	
 	
 }

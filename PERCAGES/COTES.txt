@@ -15,6 +15,7 @@ PARAMETRES{
 	z_passe_decouper=3; #nombre de passes pour l'usinage
 	f_decoupe=350; #vitesse de découpe
 	off_z=2; #offset initial en Z
+	f_centrage=200; #vitesse de centrage du foret
 }
 
 VARIABLES{
@@ -26,46 +27,46 @@ VARIABLES{
 INSTRUCTIONS{
 	#Positionnement des points de perçage percer, la première valeur est en X et la seconde est en Y.
 	
-	#Première montée en Y
-	trou([d_bord,20]);
-	trou([d_bord,69]);
+	#Montée en Y
+	trou([d_bord,16]);
+	trou([d_bord,65]);
 	trou([d_bord,101]);
-	trou([d_bord,136]);
-	#Trou gauche pour poignée
-	trou([116.5,171]);
-	trou([d_bord,176]);
-	trou([d_bord,211]);
-	trou([d_bord,243]);
+	trou([d_bord,150]);
+	trou([d_bord,190]);
+	trou([d_bord,225]);
+	trou([d_bord,257]);
 	trou([d_bord,292]);
 	
-	#Trous en haut Y
-	trou([90,307]);
-	trou([100,307]);
-	trou([199.5,307]);
-	trou([254.5,307]);
-	trou([328,307]);
-	trou([338,307]);
-	
-	#descente en Y
+	#Descente en Y
 	trou([longueur-d_bord,292]);
-	trou([longueur-d_bord,243]);
-	trou([longueur-d_bord,235]);
-	trou([longueur-d_bord,211]);
-	trou([longueur-d_bord,176]);
-	#Trou droite pour poignée
-	trou([326.5,171]);
-	trou([longueur-d_bord,136]);
+	trou([longueur-d_bord,257]);
+	trou([longueur-d_bord,225]);
+	trou([longueur-d_bord,190]);
+	trou([longueur-d_bord,150]);
 	trou([longueur-d_bord,101]);
-	trou([longueur-d_bord,77]);
-	trou([longueur-d_bord,69]);
-	trou([longueur-d_bord,20]);
+	trou([longueur-d_bord,93]);
+	trou([longueur-d_bord,65]);
+	trou([longueur-d_bord,16]);
+	trou([longueur-d_bord,8]);
 	
-	#Trous en bas Y
-	trou([338,5]);
-	trou([328,5]);
-	trou([254.5,5]);
-	trou([199.5,5]);
-	trou([100,5]);
-	trou([90,5]);
+	#Trous côté chassis bas
+	trou([338,80]);
+	trou([328,80]);
+	trou([254.5,80]);
+	trou([199.5,80]);
+	trou([100,80]);
+	trou([90,80]);
+	
+	#Trous côté chassis haut
+	trou([90,165]);
+	trou([100,165]);
+	trou([199.5,165]);
+	trou([254.5,165]);
+	trou([328,165]);
+	trou([338,165]);
+	
+	#Trous pour poignée
+	trou([326.5,185]);
+	trou([116.5,185]);
 	
 }

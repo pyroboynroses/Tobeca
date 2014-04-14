@@ -52,7 +52,10 @@ module support_608zz(){
 
 module trous_moteur(){
 		cylinder(r=r_m3+0.25, h=largeur+10, $fn=50);
+		translate([0,0,0]){cylinder(r=3.5, h=8, $fn=50);}
+
 		translate([31,0,0]){cylinder(r=r_m3+0.25, h=largeur+10, $fn=50);}
+		translate([31,0,0]){cylinder(r=3.5, h=8, $fn=50);}
 }
 
 module flanc_charniere(){
@@ -108,8 +111,19 @@ module extrudeur(){
 		
 
 		//trou central
-		translate([40,27,-5]){cylinder(r=12, h=largeur+10, $fn=50);}
-		translate([20,27-12,-5]){cube([20,12*2,largeur+10]);}
+		translate([40,27,largeur-3]){cylinder(r=12, h=5, $fn=100);}
+		translate([40,27,largeur-6]){cylinder(r1=10,r2=12, h=3, $fn=100);}
+		translate([40,27,largeur-13]){cylinder(r1=6,r2=10, h=7, $fn=100);}
+
+	hull(){
+		translate([40,27,-5]){cylinder(r=6, h=largeur+10, $fn=100);}
+		translate([35,27,-5]){cylinder(r=6, h=largeur+10, $fn=100);}
+		}
+
+
+		//translate([20,27-12,-5]){cube([20,12*2,largeur+10]);}
+		translate([20,22,-5]){cube([20,10,largeur+10]);}
+		translate([40-11-3,27,-5]){cylinder(r=12, h=largeur+10, $fn=200);}
 
 		//trou passage serrage vis
 		hull(){
@@ -133,7 +147,7 @@ module extrudeur(){
 		}
 
 		//extrusion pour ventilation proche trou d'entrée
-		translate([longueur/2+3,-5,0]){rotate([-90,0,0])cylinder(r=largeur/2-r_trou_filament-1, h=30, $fn=100);}
+		translate([longueur/2+3,-5,0]){rotate([-90,0,0])cylinder(r=largeur/2-r_trou_filament-1, h=9, $fn=200);}
 		translate([longueur/2,-5,largeur/2]){rotate([-90,0,0])cylinder(r=5, h=12, $fn=100);}
 		translate([longueur/2,-5,largeur/2]){rotate([-90,0,0])cylinder(r=9, h=9, $fn=100);}
 		
@@ -143,8 +157,8 @@ module extrudeur(){
 	translate([12,4,largeur-7]){flanc_charniere();}
 }
 
-//extrudeur();
-translate([-20,0,largeur]){rotate([0,180,0])extrudeur();}
+extrudeur();
+//translate([-20,0,largeur]){rotate([0,180,0])extrudeur();}
 
 //translate([80,0,0]){support_608zz();}
 //support_608zz();

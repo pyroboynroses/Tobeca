@@ -15,6 +15,7 @@ PARAMETRES{
 	z_passe_decouper=3; #nombre de passes pour l'usinage
 	f_decoupe=350; #vitesse de découpe
 	off_z=2; #offset initial en Z
+	f_centrage=200; #vitesse de centrage du foret
 }
 
 VARIABLES{
@@ -46,7 +47,7 @@ INSTRUCTIONS{
 	trou([longueur-30,178]);
 	
 	#Trous pour vis de maintien courroie
-	trou([115,110]);
+	trou([122,110]);
 	trou([115,100]);
 	
 	#Trou douille droite en bas

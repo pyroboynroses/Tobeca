@@ -15,6 +15,7 @@ PARAMETRES{
 	z_passe_decouper=3; #nombre de passes pour l'usinage
 	f_decoupe=500; #vitesse de découpe
 	off_z=2; #offset initial en Z
+	f_centrage=200; #vitesse de centrage du foret
 }
 
 VARIABLES{
@@ -25,21 +26,10 @@ VARIABLES{
 }
 
 INSTRUCTIONS{
-	#Positionnement des points de perçage percer, la première valeur est en X et la seconde est en Y.
-	#Première montée en Y
-	#trou([d_bord,25]);
-	trou([d_bord,156]);
-	
+	#Positionnement des points de perçage percer, la première valeur est en X et la seconde est en Y.	
 	#Trous pour BASE_Z de gauche
 	trou([14,188.5]);
 	trou([14,243.5]);
-	
-	trou([d_bord,287]);
-	#trou([d_bord,418]);
-	
-	#Trous sur l'axe X et en Y haut
-	#trou([25,longueur-d_bord]);
-	trou([125,longueur-d_bord]);
 	
 	#Trous de gauche fixation alim, électronique et moteur
 	trou([194,longueur-40]);
@@ -56,25 +46,7 @@ INSTRUCTIONS{
 	trou([234,248]);
 	trou([234,longueur-40]);
 	
-	#Suite haut en X
-	trou([309,longueur-d_bord]);
-	#trou([389,longueur-d_bord]);
-	
-	#Descente en Y
-	#trou([largeur-d_bord,418]);
-	trou([largeur-d_bord,287]);
-	
 	#Trous pour BASE_Z de droite
 	trou([largeur-14,243.5]);
 	trou([largeur-14,188.5]);
-	
-	trou([largeur-d_bord,156]);
-	#trou([largeur-d_bord,25]);
-	
-	#Retour en X
-	#trou([389,d_bord]);
-	trou([268,d_bord]);
-	trou([146,d_bord]);
-	#trou([25,d_bord]);
-
 }
