@@ -63,8 +63,17 @@ module fixation_x(){
 		cube([longueur,largeur,height2]);
 
 		//trou moteur
-		translate([21,largeur/2,-5]){cylinder(r=16, h=height1+10, $fn=50);}
+		translate([21,largeur/2,-5]){cylinder(r=16, h=height1+10, $fn=100);}
 		translate([21,largeur/2-16,-5]){cube([largeur,32,height2+20]);}
+
+		//gorge pour courroie
+		hull(){
+		translate([21,largeur/2,height2/2-3]){cylinder(r=18, h=8, $fn=100);}
+		translate([21,largeur/2,height2/2+5]){cylinder(r1=18,r2=16, h=2, $fn=100);}
+
+		translate([21+5,largeur/2,height2/2-3]){cylinder(r=18, h=8, $fn=100);}
+		translate([21+5,largeur/2,height2/2+5]){cylinder(r1=18,r2=16, h=2, $fn=100);}
+		}
 
 		//trous de fixation du moteur
 		translate([5.5,largeur/2-15.5,-5]){cylinder(r=r_m3, h=height2+20, $fn=50);}

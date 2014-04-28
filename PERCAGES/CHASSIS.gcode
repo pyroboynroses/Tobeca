@@ -1,5 +1,5 @@
 ; Generation GCODE par OpenASCAM - Adrien Grelet - 2013
-; Generation fichier : Wed Apr 09 15:40:13 2014
+; Generation fichier : Wed Apr 23 15:08:34 2014
 
 ; ep_matiere=27
 ; marge_z=5
@@ -25,7 +25,7 @@ G1 Z34.0 F3000 ; hauteur de déplacement Z, incluant son offset
 ; longueur=443
 ; largeur=414
 G1 F300
-G1 X18.0 Y187.5 F3000
+G1 X18.0 Y189.5 F3000
 G1 F700
 G1 Z30.5 F3000
 G1 F200
@@ -37,7 +37,7 @@ G1 F700
 G1 Z34.0 F3000
 
 G1 F300
-G1 X18.0 Y242.5 F3000
+G1 X18.0 Y244.5 F3000
 G1 F700
 G1 Z30.5 F3000
 G1 F200
@@ -193,7 +193,7 @@ G1 F700
 G1 Z34.0 F3000
 
 G1 F300
-G1 X404.0 Y242.5 F3000
+G1 X404.0 Y244.5 F3000
 G1 F700
 G1 Z30.5 F3000
 G1 F200
@@ -205,7 +205,7 @@ G1 F700
 G1 Z34.0 F3000
 
 G1 F300
-G1 X404.0 Y187.5 F3000
+G1 X404.0 Y189.5 F3000
 G1 F700
 G1 Z30.5 F3000
 G1 F200

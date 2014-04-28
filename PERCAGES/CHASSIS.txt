@@ -28,8 +28,8 @@ VARIABLES{
 INSTRUCTIONS{
 	#Positionnement des points de perçage percer, la première valeur est en X et la seconde est en Y.	
 	#Trous pour BASE_Z de gauche
-	trou([14,188.5]);
-	trou([14,243.5]);
+	trou([14,190.5]);
+	trou([14,245.5]);
 	
 	#Trous de gauche fixation alim, électronique et moteur
 	trou([194,longueur-40]);
@@ -47,6 +47,6 @@ INSTRUCTIONS{
 	trou([234,longueur-40]);
 	
 	#Trous pour BASE_Z de droite
-	trou([largeur-14,243.5]);
-	trou([largeur-14,188.5]);
+	trou([largeur-14,245.5]);
+	trou([largeur-14,190.5]);
 }

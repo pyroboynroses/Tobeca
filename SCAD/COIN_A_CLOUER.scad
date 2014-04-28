@@ -1,6 +1,6 @@
 d_trou=25;
 ep=4;
-r_trou=0.5;
+r_trou=1.2;
 cube_int=35;
 ep_bois=9;
 r_goutte=6;

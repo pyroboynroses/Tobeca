@@ -37,24 +37,24 @@ INSTRUCTIONS{
 	trou([24.5,160]);
 	
 	#Fermeture grenouille gauche
-	trou([41,211]);
+	trou([41,213]);
 	trou([57.5,231]);
 	trou([24.5,231]);
 	
 	#Fermeture grenouille gauche
-	trou([41,282]);
+	trou([41,284]);
 	trou([57.5,302]);
 	trou([24.5,302]);
 	
 	#Fermeture grenouille droite
 	trou([longueur-57.5,302]);
 	trou([longueur-24.5,302]);
-	trou([longueur-41,282]);
+	trou([longueur-41,284]);
 	
 	#Fermeture grenouille droite
 	trou([longueur-57.5,231]);
 	trou([longueur-24.5,231]);
-	trou([longueur-41,211]);
+	trou([longueur-41,213]);
 	
 	#Fermeture grenouille droite
 	trou([longueur-57.5,160]);
