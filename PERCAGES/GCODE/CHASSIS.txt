@@ -1,0 +1,52 @@
+#Fichier modèle pour les perçages
+#Il faut absolument respecter l'ordre suivant dans les modules : PARAMETRES, VARIABLES, INSTRUCTIONS
+
+PARAMETRES{
+	#Permet de stocker tous les paramètres de perçage/usinage qui serviront à la génération du GCODE
+	ep_matiere=27; #épaisseur de la pièce à percer en mm
+	marge_z=5; #marge Z au dessus de la pièce pour déplacements en mm
+	f_deplacement=300; #vitesse de déplacement des axes mm/min
+	f_descente=700; #vitesse du descente du forêt en mm/min
+	z_passe_percer=1; #nombre de passes pour perçage
+	off_x=4; #offset initial en X
+	off_y=-1; #offset initial en Y
+	accel=3000; #acceleration sur les déplacements
+	d_fraise=3; #diamètre de la fraise
+	z_passe_decouper=3; #nombre de passes pour l'usinage
+	f_decoupe=500; #vitesse de découpe
+	off_z=2; #offset initial en Z
+	f_centrage=200; #vitesse de centrage du foret
+}
+
+VARIABLES{
+	#Emplacement pour gérer directement des variables dans les instructions
+	d_bord=4.5;
+	longueur=443;
+	largeur=414;
+}
+
+INSTRUCTIONS{
+	#Positionnement des points de perçage percer, la première valeur est en X et la seconde est en Y.	
+	#Trous pour BASE_Z de gauche
+	trou([14,190.5]);
+	trou([14,245.5]);
+	
+	#Trous de gauche fixation alim, électronique et moteur
+	trou([194,longueur-40]);
+	trou([194,248]);
+	trou([192.5,189]);
+	trou([192.5,95]);
+	trou([198.5,44.5]);
+	trou([198.5,13.5]);
+	#Trous de droite fixation alim, électronique et moteur
+	trou([229.5,13.5]);
+	trou([229.5,44.5]);
+	trou([235.5,95]);
+	trou([235.5,189]);
+	trou([234,248]);
+	trou([234,longueur-40]);
+	
+	#Trous pour BASE_Z de droite
+	trou([largeur-14,245.5]);
+	trou([largeur-14,190.5]);
+}

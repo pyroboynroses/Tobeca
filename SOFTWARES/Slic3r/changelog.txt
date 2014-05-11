@@ -1,0 +1,25 @@
+Changelog sur les fichiers Slic3r pour la Tobeca
+Adrien Grelet - RepRap Diffusion
+
+18/03/2014 : diminution des valeurs d'extrusion width pour améliorer la qualité d'impression.
+08/01/2014 : suppression de la TOBECA_04, qui n'était qu'un prototype de test avec une nouvelle tête
+03/01/2014 : Réduction de nombre de profils de base, compatibles pour des têtes autant de 0.4 ou 0.5mm et forçage de l'utilisation du plateau chauffant avec des custom GCODE
+19/12/2013 : simplification des profils de base et création des profils pour tête 0.4mm
+28/11/2013 : Augmentation de la rétraction sur les impressions
+04/09/2013 : Ajout d'un profil avec supports et modification du comportement des périmètres au début des impressions, pour consommer 20mm de filament et ainsi le réamorcer correctement.
+18/07/2013 : Modification des réglages de filament, pour garder des réglages uniquement sur les températures, en fonction de la machine et/ou des couleurs.
+12/07/2013 : Ajout d'un profil pour imprimer des statuettes ainsi qu'une augmentation de la vitesse de la première couche sur presque tous les réglages.
+10/05/2013 : Réduction des vitesses de déplacement hors impression pour bien imprimer dans tous les cas, et éviter des décalages lors du rodage des machines.
+06/05/2013 : Augmentation des température de fusion du PLA Faberdashery
+18/04/2013 : Réduction des vitesses de périmètre et modification des températures de fusion pour le PLA Faberdashery
+10/04/2013 : Réduction de l'extrusion width de 0.5mm -> 0.45mm pour améliorer la liaison entre les passages, notamment avec du PLA Faberdashery.
+08/04/2013 : Ajout du paramétrage avancé NORMAL_RESISTANT.
+03/04/2013 : Affinage de la configuration pour le NORMAL_0INFILL.
+29/03/2013 : Ajout de paramètres avancés, modification et ajout de types de PLA.
+20/03/2013 : Première version des fichiers de configuration.
+
+
+
+
+
+

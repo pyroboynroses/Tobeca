@@ -1,0 +1,72 @@
+#Fichier modèle pour les perçages
+#Il faut absolument respecter l'ordre suivant dans les modules : PARAMETRES, VARIABLES, INSTRUCTIONS
+
+PARAMETRES{
+	#Permet de stocker tous les paramètres de perçage/usinage qui serviront à la génération du GCODE
+	ep_matiere=27; #épaisseur de la pièce à percer en mm
+	marge_z=5; #marge Z au dessus de la pièce pour déplacements en mm
+	f_deplacement=300; #vitesse de déplacement des axes mm/min
+	f_descente=500; #vitesse du descente du forêt en mm/min
+	z_passe_percer=1; #nombre de passes pour perçage
+	off_x=4; #offset initial en X
+	off_y=-1; #offset initial en Y
+	accel=3000; #acceleration sur les déplacements
+	d_fraise=3; #diamètre de la fraise
+	z_passe_decouper=3; #nombre de passes pour l'usinage
+	f_decoupe=350; #vitesse de découpe
+	off_z=2; #offset initial en Z
+	f_centrage=200; #vitesse de centrage du foret
+}
+
+VARIABLES{
+	#Emplacement pour gérer directement des variables dans les instructions
+	longueur=443;
+	d_bord=4.5;
+}
+
+INSTRUCTIONS{
+	#Positionnement des points de perçage percer, la première valeur est en X et la seconde est en Y.
+	
+	#Montée en Y
+	trou([d_bord,16]);
+	trou([d_bord,65]);
+	trou([d_bord,101]);
+	trou([d_bord,150]);
+	trou([d_bord,190]);
+	trou([d_bord,225]);
+	trou([d_bord,257]);
+	trou([d_bord,292]);
+	
+	#Descente en Y
+	trou([longueur-d_bord,292]);
+	trou([longueur-d_bord,257]);
+	trou([longueur-d_bord,225]);
+	trou([longueur-d_bord,190]);
+	trou([longueur-d_bord,150]);
+	trou([longueur-d_bord,101]);
+	trou([longueur-d_bord,93]);
+	trou([longueur-d_bord,65]);
+	trou([longueur-d_bord,16]);
+	trou([longueur-d_bord,8]);
+	
+	#Trous côté chassis bas
+	trou([338,80]);
+	trou([328,80]);
+	trou([254.5,80]);
+	trou([199.5,80]);
+	trou([100,80]);
+	trou([90,80]);
+	
+	#Trous côté chassis haut
+	trou([90,165]);
+	trou([100,165]);
+	trou([199.5,165]);
+	trou([254.5,165]);
+	trou([328,165]);
+	trou([338,165]);
+	
+	#Trous pour poignée
+	trou([326.5,185]);
+	trou([116.5,185]);
+	
+}

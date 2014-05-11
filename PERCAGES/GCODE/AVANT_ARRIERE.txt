@@ -1,0 +1,95 @@
+#Fichier modèle pour les perçages
+#Il faut absolument respecter l'ordre suivant dans les modules : PARAMETRES, VARIABLES, INSTRUCTIONS
+
+PARAMETRES{
+	#Permet de stocker tous les paramètres de perçage/usinage qui serviront à la génération du GCODE
+	ep_matiere=27; #épaisseur de la pièce à percer en mm
+	marge_z=7; #marge Z au dessus de la pièce pour déplacements en mm
+	f_deplacement=300; #vitesse de déplacement des axes mm/min
+	f_descente=700; #vitesse du descente du forêt en mm/min
+	z_passe_percer=1; #nombre de passes pour perçage
+	off_x=4; #offset initial en X
+	off_y=-1; #offset initial en Y
+	accel=3000; #acceleration sur les déplacements
+	d_fraise=3; #diamètre de la fraise
+	z_passe_decouper=3; #nombre de passes pour l'usinage
+	f_decoupe=500; #vitesse de découpe
+	off_z=2; #offset initial en Z
+	f_centrage=200; #vitesse de centrage du foret
+}
+
+VARIABLES{
+	#Emplacement pour gérer directement des variables dans les instructions
+	hauteur=85;
+	longueur=396;
+}
+
+INSTRUCTIONS{
+	#Positionnement des points de perçage percer, la première valeur est en X et la seconde est en Y.
+	#Fermeture grenouille gauche
+	trou([41,35]);
+	trou([57.5,75]);
+	trou([24.5,75]);
+	
+	#Fermeture grenouille gauche
+	trou([41,120]);
+	trou([57.5,160]);
+	trou([24.5,160]);
+	
+	#Fermeture grenouille gauche
+	trou([41,213]);
+	trou([57.5,231]);
+	trou([24.5,231]);
+	
+	#Fermeture grenouille gauche
+	trou([41,284]);
+	trou([57.5,302]);
+	trou([24.5,302]);
+	
+	#Fermeture grenouille droite
+	trou([longueur-57.5,302]);
+	trou([longueur-24.5,302]);
+	trou([longueur-41,284]);
+	
+	#Fermeture grenouille droite
+	trou([longueur-57.5,231]);
+	trou([longueur-24.5,231]);
+	trou([longueur-41,213]);
+	
+	#Fermeture grenouille droite
+	trou([longueur-57.5,160]);
+	trou([longueur-24.5,160]);
+	trou([longueur-41,120]);
+	
+	#Fermeture grenouille droite
+	trou([longueur-57.5,75]);
+	trou([longueur-24.5,75]);
+	trou([longueur-41,35]);
+	
+	#Trous pour fixer les arbres de guidage Y droite
+	trou([280,24]);
+	trou([280,46]);
+	trou([280,109]);
+	trou([280,131]);
+	
+	#Trous pour PLAQUE_ARRIERE droite
+	trou([257.5,17]);
+	trou([237,44]);
+	
+	#Trous pour RETOUR_Y
+	trou([222.5,66]);
+	trou([187.5,66]);
+	
+	#Trous pour PLAQUE_ARRIERE gauche
+	trou([173,44]);
+	trou([152.5,17]);
+	
+	#Trous pour fixer les arbres de guidage Y gauche
+	trou([130,24]);
+	trou([130,46]);
+	trou([130,109]);
+	trou([130,131]);
+	
+	
+	
+}

@@ -9,9 +9,9 @@ r_m3=2;
 r_ecrou_m3=3.3;
 r_arbre=4;
 prof_arbre=17;
-r_ecrou_m5=4.7;
-r_m5=3.5;
-h_ecrou_m5=5;
+r_ecrou_m5=4.4;
+r_m5=2.75;
+h_ecrou_m5=3.5;
 height1=30;
 height2=19;
 ep_trou_m5=2;
@@ -20,7 +20,7 @@ l_pass_tige_filetee=35;
 l_lameflex=1;
 ep_lameflex=1.5;
 l_fix=7;
-l_pass_ecrou=4.5;
+l_pass_ecrou=4.2;
 
 module passage_tube(HEIGHT){
 	difference(){
