@@ -1,8 +1,8 @@
 longueur=84;
 largeur=35;
 trou_m3=2;
-h1=2;
-h2=5;
+h1=1.5;
+h2=4;
 ecart=55;
 r_tube=6.25;
 pos_tube=15;
@@ -26,8 +26,8 @@ module base_z(){
 
 		//empreinte écrous de serrage
 		hull(){
-		translate([pos_tube-10,14.5-2,3]){rotate([0,0,30])cylinder(h=20, r=r_ecrou_m3, $fn=6);}
-		translate([pos_tube-10,14.5+2,3]){rotate([0,0,30])cylinder(h=20, r=r_ecrou_m3, $fn=6);}
+		translate([pos_tube-10,14.5-2,h1]){rotate([0,0,30])cylinder(h=20, r=r_ecrou_m3, $fn=6);}
+		translate([pos_tube-10,14.5+2,h1]){rotate([0,0,30])cylinder(h=20, r=r_ecrou_m3, $fn=6);}
 		}
 
 		hull(){
@@ -37,8 +37,8 @@ module base_z(){
 
 		//empreinte écrous de serrage
 		hull(){
-		translate([pos_tube-10,14.5+ecart-2,3]){rotate([0,0,30])cylinder(h=20, r=r_ecrou_m3, $fn=6);}
-		translate([pos_tube-10,14.5+ecart+2,3]){rotate([0,0,30])cylinder(h=20, r=r_ecrou_m3, $fn=6);}
+		translate([pos_tube-10,14.5+ecart-2,h1]){rotate([0,0,30])cylinder(h=20, r=r_ecrou_m3, $fn=6);}
+		translate([pos_tube-10,14.5+ecart+2,h1]){rotate([0,0,30])cylinder(h=20, r=r_ecrou_m3, $fn=6);}
 		}
 
 		//cassage des coins

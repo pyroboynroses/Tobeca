@@ -1,6 +1,6 @@
 d1=22.4;
-ep=1;
-d_fla=28;
+ep=2;
+d_fla=29;
 h_courroie=6;
 h_fla=1;
 h_pla=0.5;
