@@ -4,11 +4,11 @@
 PARAMETRES{
 	#Permet de stocker tous les paramètres de perçage/usinage qui serviront à la génération du GCODE
 	ep_matiere=27; #épaisseur de la pièce à percer en mm
-	marge_z=5; #marge Z au dessus de la pièce pour déplacements en mm
+	marge_z=15; #marge Z au dessus de la pièce pour déplacements en mm
 	f_deplacement=300; #vitesse de déplacement des axes mm/min
 	f_descente=500; #vitesse du descente du forêt en mm/min
 	z_passe_percer=1; #nombre de passes pour perçage
-	off_x=4; #offset initial en X
+	off_x=3.5; #offset initial en X
 	off_y=-1; #offset initial en Y
 	accel=3000; #acceleration sur les déplacements
 	d_fraise=3; #diamètre de la fraise

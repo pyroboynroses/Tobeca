@@ -95,6 +95,7 @@ module extrudeur(){
 
 		//extrusions dans partie à fixer sur plaque
 		translate([15,-5,-5]){cube([10,5+3,largeur+10]);}
+		translate([22,-5,-5]){cube([10,5+3,15]);}
 		translate([45,-5,-5]){cube([10,5+3,largeur+10]);}
 		translate([5,-5,largeur/2]){rotate([-90,0,0])cylinder(r=r_m3, h=20, $fn=50);}
 		translate([longueur-5,-5,largeur/2]){rotate([-90,0,0])cylinder(r=r_m3, h=20, $fn=50);}
